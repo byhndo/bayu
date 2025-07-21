@@ -149,8 +149,7 @@ function preloadImages(container) {
   });
   return Promise.all(promises);
 }
-
-preloadImages().then(() => {		
+	
 const { createApp, ref, watch, onMounted, nextTick } = Vue;
 const { createRouter, createWebHistory, useRoute, useRouter } = VueRouter;
 
@@ -164,7 +163,7 @@ const app = createApp({
 
     const afterEnter = async (el, done) => {                   
      await nextTick();
-   //  await preloadImages(el);
+     await preloadImages(el);
      setupReveal(el);  
      ScrollTrigger.refresh();
      done();                       
@@ -245,7 +244,6 @@ const app = createApp({
 
 app.use(router);
 app.mount("#app");
-});
 				
 const title = document.querySelector("h1");
 const feBlur = document.querySelector(`#noisetitle feGaussianBlur`);
