@@ -352,7 +352,7 @@ h5 {
  text-align: center;
 }
 
-.theme, .particles-button {
+.theme {
  --color-item-bg: transparent;
  --color-button-bg: var(--darkgrey);
  --color-button-text: var(--light);     
