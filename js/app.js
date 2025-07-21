@@ -46,8 +46,6 @@ function animateValue(id, start, end, duration) {
 async function animateLoader() {
   await new Promise((resolve) => setTimeout(resolve, time));
 
-  await preloadImages(document.querySelector("#app"));
-	
   let percentBar = document.getElementById("precent");
   let loadingBar = document.getElementById("loader");
 	
@@ -213,25 +211,28 @@ const app = createApp({
     });
 
     watch(
-      () => route.path,
-      (newPath) => {
-        if (firstLoad.value) return;
+  () => route.path,
+  async (newPath) => {
+    if (firstLoad.value) return;
 
-        if (newPath === '/bio') {
-          bg.value = 'bio';
-        } else if (newPath === '/photos') {
-          bg.value = 'photos';
-        }
+    if (newPath === '/bio') {
+      bg.value = 'bio';
+    } else if (newPath === '/photos') {
+      bg.value = 'photos';
+    }
 
-	nextTick(() => {
-        requestAnimationFrame(() => {
-          window.scrollTo({ top: 0, behavior: 'auto' });
-        });
+    await nextTick();
 
-        triggerAnimation();
-        });
-       }
-    );
+    await preloadImages(document.querySelector("#app"));
+
+    requestAnimationFrame(() => {
+      window.scrollTo({ top: 0, behavior: 'auto' });
+    });
+
+    triggerAnimation();
+  }
+);
+
 
     return {
       bg,
