@@ -1,4 +1,9 @@
-/*function preloadImages(container) {
+const allImages = [];
+    for (let i = 1; i <= 18; i++) {
+      allImages.push(`img/${i}.webp`);
+    }
+
+function preloadImages(container) {
   const images = container.querySelectorAll("img");
   const promises = [];
   images.forEach((img) => {
@@ -8,7 +13,7 @@
     }));
   });
   return Promise.all(promises);
-} */
+} 
 
 window.addEventListener("load", function() {
 	
@@ -148,8 +153,9 @@ const delaytl = .5;
 $('html, body').css({
   'overflow': 'auto',
   'height': 'auto'
-});	
- 
+});
+	
+preloadImages(allImages).then(() => {
 const { createApp, ref, watch, onMounted, nextTick } = Vue;
 const { createRouter, createWebHistory, useRoute, useRouter } = VueRouter;
 
@@ -244,6 +250,8 @@ const app = createApp({
 
 app.use(router);
 app.mount("#app");
+
+});
 				
 const title = document.querySelector("h1");
 const feBlur = document.querySelector(`#noisetitle feGaussianBlur`);
