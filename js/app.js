@@ -1,5 +1,18 @@
-window.addEventListener("load", function () {
+function preloadImages(container) {
+  const images = container.querySelectorAll("img");
+  const promises = [];
+  images.forEach((img) => {
+    if (img.complete) return;
+    promises.push(new Promise((resolve) => {
+      img.onload = img.onerror = resolve;
+    }));
+  });
+  return Promise.all(promises);
+}
 
+window.addEventListener("load", async () ==> {
+await preloadImages(document);
+	
 var width = 100,
   perfData = window.performance.timing,
   EstimatedTime = Math.abs(perfData.loadEventEnd - perfData.navigationStart),
@@ -137,19 +150,7 @@ $('html, body').css({
   'overflow': 'auto',
   'height': 'auto'
 });	
-
-function preloadImages(container) {
-  const images = container.querySelectorAll("img");
-  const promises = [];
-  images.forEach((img) => {
-    if (img.complete) return;
-    promises.push(new Promise((resolve) => {
-      img.onload = img.onerror = resolve;
-    }));
-  });
-  return Promise.all(promises);
-}
-  
+ 
 const { createApp, ref, watch, onMounted, nextTick } = Vue;
 const { createRouter, createWebHistory, useRoute, useRouter } = VueRouter;
 
@@ -163,7 +164,7 @@ const app = createApp({
 
     const afterEnter = async (el, done) => {                   
      await nextTick();
-     await preloadImages(el);
+  // await preloadImages(el);
      setupReveal(el);  
      ScrollTrigger.refresh();
      done();                       
