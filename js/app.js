@@ -31,6 +31,28 @@ function animateValue(id, start, end, duration) {
   }, stepTime);
 }
 
+const loadedSrcSet = new Set();
+
+function preloadImages(container) {
+  const images = container.querySelectorAll("img");
+  const promises = [];
+
+  images.forEach((img) => {
+    const src = img.getAttribute("src");
+    if (src && !loadedSrcSet.has(src)) {
+      loadedSrcSet.add(src);
+      const imgPreload = new Image();
+      const promise = new Promise((resolve) => {
+        imgPreload.onload = imgPreload.onerror = resolve;
+      });
+      imgPreload.src = src;
+      promises.push(promise);
+    }
+  });
+
+  return Promise.all(promises);
+}	
+
 async function animateLoader() {
   await new Promise((resolve) => setTimeout(resolve, time));
  
@@ -46,7 +68,10 @@ async function animateLoader() {
 	
   let tl = gsap.timeline({
     paused: true,
-    onComplete: contentShow
+    onComplete: () => {
+    contentShow(); 
+    ScrollTrigger.refresh();
+    }
   });
 	    	
   tl.to(".percentage", {
@@ -136,28 +161,6 @@ $('html, body').css({
   'overflow': 'auto',
   'height': 'auto'
 });	
-
-const loadedSrcSet = new Set();
-
-function preloadImages(container) {
-  const images = container.querySelectorAll("img");
-  const promises = [];
-
-  images.forEach((img) => {
-    const src = img.getAttribute("src");
-    if (src && !loadedSrcSet.has(src)) {
-      loadedSrcSet.add(src);
-      const imgPreload = new Image();
-      const promise = new Promise((resolve) => {
-        imgPreload.onload = imgPreload.onerror = resolve;
-      });
-      imgPreload.src = src;
-      promises.push(promise);
-    }
-  });
-
-  return Promise.all(promises);
-}
  
 const { createApp, ref, watch, onMounted, nextTick } = Vue;
 const { createRouter, createWebHistory, useRoute, useRouter } = VueRouter;
@@ -174,6 +177,7 @@ const app = createApp({
      await nextTick();   
      await preloadImages(el);
      setupReveal(el);
+     ScrollTrigger.refresh();
      done();                       
     };
 	  
@@ -797,8 +801,6 @@ tl.to(footer, {
 }); 
 		 	                                                                                                                  
 });	
-
-ScrollTrigger.refresh();
 	
 }, container); /* ctx */
 		
