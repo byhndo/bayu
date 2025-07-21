@@ -159,9 +159,9 @@ const app = createApp({
     const firstLoad = ref(true);
 
     const afterEnter = async (el, done) => {                   
-     await nextTick();       
-     setupReveal(el);
+     await nextTick();            
      await preloadImages(el);
+     setupReveal(el);
      done();                       
     };
 	  
