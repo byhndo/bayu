@@ -471,7 +471,6 @@ else if (bg === 'photos' && photosPath) {
     .to(photosPath, {duration: .5, ease: "power1", attr: { d: paths.step2.filled } });  
 
 }
-
 }
 	
 const lenis = new Lenis({
@@ -502,7 +501,7 @@ gsap.ticker.add((time)=>{
 gsap.ticker.lagSmoothing(0);
 
 	
-function setupReveal(container) {
+async function setupReveal(container) {
 container.ctx = gsap.context(() => {	
 	
 const RevealBoxsme = container.querySelectorAll(".boxme");
@@ -797,15 +796,16 @@ tl.to(footer, {
 }); 
 		 	                                                                                                                  
 });	
-
-ScrollTrigger.refresh();
 	
 }, container); /* ctx */
+
+ScrollTrigger.refresh(); 
+return Promise.resolve();	
 		
 } /* setupReveal */
 	 
 }
 	
 
-
+/* preloader */
 });      
