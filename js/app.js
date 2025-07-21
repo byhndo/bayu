@@ -45,6 +45,8 @@ function animateValue(id, start, end, duration) {
 
 async function animateLoader() {
   await new Promise((resolve) => setTimeout(resolve, time));
+
+  await preloadImages(document.querySelector("#app"));
 	
   let percentBar = document.getElementById("precent");
   let loadingBar = document.getElementById("loader");
@@ -136,17 +138,6 @@ async function animateLoader() {
   })();
 }
 
-const TempApp = Vue.createApp({
-  template: `<router-view></router-view>`
-});
-TempApp.use(router);
-await router.isReady();
-router.replace('/bio'); 
-TempApp.mount("#app");
-
-await Vue.nextTick();
-await preloadImages(document.getElementById("app"));
-
 animateLoader();
 
 gsap.registerPlugin(ScrollTrigger);
@@ -174,7 +165,6 @@ const app = createApp({
 
     const afterEnter = async (el, done) => {                   
      await nextTick();
-     await preloadImages(el);
      setupReveal(el);  
      ScrollTrigger.refresh();
      done();                       
