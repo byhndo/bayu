@@ -172,6 +172,7 @@ const app = createApp({
      await nextTick();   
      await preloadImages(el);
      setupReveal(el);
+     ScrollTrigger.refresh();
      done();                       
     };
 	  
@@ -795,8 +796,6 @@ tl.to(footer, {
 }); 
 		 	                                                                                                                  
 });	
-
-ScrollTrigger.refresh();
 	
 }, container); /* ctx */
 		
