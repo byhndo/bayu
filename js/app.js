@@ -170,9 +170,21 @@ function preloadImages(container) {
     }));
   });
   return Promise.all(promises);
-} 
+}
+
+function preloadImageUrls(urls) {
+  return Promise.all(
+    urls.map((url) => {
+      return new Promise((resolve) => {
+        const img = new Image();
+        img.onload = img.onerror = resolve;
+        img.src = url;
+      });
+    })
+  );
+}
 	
-preloadImages(allImages).then(() => {
+preloadImagesUrls(allImages).then(() => {
 const { createApp, ref, watch, onMounted, nextTick } = Vue;
 const { createRouter, createWebHistory, useRoute, useRouter } = VueRouter;
 
