@@ -1,15 +1,3 @@
-function preloadImages(container) {
-  const images = container.querySelectorAll("img");
-  const promises = [];
-  images.forEach((img) => {
-    if (img.complete) return;
-    promises.push(new Promise((resolve) => {
-      img.onload = img.onerror = resolve;
-    }));
-  });
-  return Promise.all(promises);
-}
-
 window.addEventListener("load", function () {
 
 var width = 100,
@@ -45,7 +33,7 @@ function animateValue(id, start, end, duration) {
 
 async function animateLoader() {
   await new Promise((resolve) => setTimeout(resolve, time));
-
+	
   let percentBar = document.getElementById("precent");
   let loadingBar = document.getElementById("loader");
 	
@@ -149,6 +137,18 @@ $('html, body').css({
   'overflow': 'auto',
   'height': 'auto'
 });	
+
+function preloadImages(container) {
+  const images = container.querySelectorAll("img");
+  const promises = [];
+  images.forEach((img) => {
+    if (img.complete) return;
+    promises.push(new Promise((resolve) => {
+      img.onload = img.onerror = resolve;
+    }));
+  });
+  return Promise.all(promises);
+}
   
 const { createApp, ref, watch, onMounted, nextTick } = Vue;
 const { createRouter, createWebHistory, useRoute, useRouter } = VueRouter;
@@ -163,6 +163,7 @@ const app = createApp({
 
     const afterEnter = async (el, done) => {                   
      await nextTick();
+     await preloadImages(el);
      setupReveal(el);  
      ScrollTrigger.refresh();
      done();                       
@@ -211,28 +212,25 @@ const app = createApp({
     });
 
     watch(
-  () => route.path,
-  async (newPath) => {
-    if (firstLoad.value) return;
+      () => route.path,
+      (newPath) => {
+        if (firstLoad.value) return;
 
-    if (newPath === '/bio') {
-      bg.value = 'bio';
-    } else if (newPath === '/photos') {
-      bg.value = 'photos';
-    }
+        if (newPath === '/bio') {
+          bg.value = 'bio';
+        } else if (newPath === '/photos') {
+          bg.value = 'photos';
+        }
 
-    await nextTick();
+	nextTick(() => {
+        requestAnimationFrame(() => {
+          window.scrollTo({ top: 0, behavior: 'auto' });
+        });
 
-    await preloadImages(document.querySelector("#app"));
-
-    requestAnimationFrame(() => {
-      window.scrollTo({ top: 0, behavior: 'auto' });
-    });
-
-    triggerAnimation();
-  }
-);
-
+        triggerAnimation();
+        });
+       }
+    );
 
     return {
       bg,
