@@ -138,7 +138,7 @@ $('html, body').css({
   'height': 'auto'
 });	
 
-function preloadImages(container) {
+/*function preloadImages(container) {
   const images = container.querySelectorAll("img");
   const promises = [];
   images.forEach((img) => {
@@ -148,8 +148,15 @@ function preloadImages(container) {
     }));
   });
   return Promise.all(promises);
+}*/
+
+function preloadImages(selector = 'img') {
+  return new Promise((resolve) => {
+    imagesLoaded(document.querySelectorAll(selector), { background: true }, resolve);
+  });
 }
-  
+
+preloadImages().then(() => {		
 const { createApp, ref, watch, onMounted, nextTick } = Vue;
 const { createRouter, createWebHistory, useRoute, useRouter } = VueRouter;
 
@@ -163,7 +170,7 @@ const app = createApp({
 
     const afterEnter = async (el, done) => {                   
      await nextTick();
-     await preloadImages(el);
+   //  await preloadImages(el);
      setupReveal(el);  
      ScrollTrigger.refresh();
      done();                       
@@ -244,6 +251,7 @@ const app = createApp({
 
 app.use(router);
 app.mount("#app");
+});
 				
 const title = document.querySelector("h1");
 const feBlur = document.querySelector(`#noisetitle feGaussianBlur`);
