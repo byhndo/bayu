@@ -151,9 +151,9 @@ $('html, body').css({
 }*/
 
 function preloadImages(selector = 'img') {
-  return new Promise((resolve) => {
-    imagesLoaded(document.querySelectorAll(selector), { background: true }, resolve);
-  });
+  return new Promise((resolve) => {
+    imagesLoaded(document.querySelectorAll(selector), { background: true }, resolve);
+  });
 }
 
 preloadImages().then(() => {		
