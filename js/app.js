@@ -1,20 +1,3 @@
-const allImages = [];
-    for (let i = 1; i <= 18; i++) {
-      allImages.push(`img/${i}.webp`);
-    }
-
-function preloadImages(container) {
-  const images = container.querySelectorAll("img");
-  const promises = [];
-  images.forEach((img) => {
-    if (img.complete) return;
-    promises.push(new Promise((resolve) => {
-      img.onload = img.onerror = resolve;
-    }));
-  });
-  return Promise.all(promises);
-} 
-
 window.addEventListener("load", function() {
 	
 var width = 100,
@@ -154,6 +137,23 @@ $('html, body').css({
   'overflow': 'auto',
   'height': 'auto'
 });
+
+const allImages = [];
+  for (let i = 1; i <= 18; i++) {
+    allImages.push(`img/${i}.webp`);
+}
+
+function preloadImages(container) {
+  const images = container.querySelectorAll("img");
+  const promises = [];
+  images.forEach((img) => {
+    if (img.complete) return;
+    promises.push(new Promise((resolve) => {
+      img.onload = img.onerror = resolve;
+    }));
+  });
+  return Promise.all(promises);
+} 
 	
 preloadImages(allImages).then(() => {
 const { createApp, ref, watch, onMounted, nextTick } = Vue;
