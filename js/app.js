@@ -1,3 +1,15 @@
+function preloadImages(container) {
+  const images = container.querySelectorAll("img");
+  const promises = [];
+  images.forEach((img) => {
+    if (img.complete) return;
+    promises.push(new Promise((resolve) => {
+      img.onload = img.onerror = resolve;
+    }));
+  });
+  return Promise.all(promises);
+}
+
 window.addEventListener("load", function () {
 
 var width = 100,
@@ -124,6 +136,17 @@ async function animateLoader() {
   })();
 }
 
+const TempApp = Vue.createApp({
+  template: `<router-view></router-view>`
+});
+TempApp.use(router);
+await router.isReady();
+router.replace('/bio'); 
+TempApp.mount("#app");
+
+await Vue.nextTick();
+await preloadImages(document.getElementById("app"));
+
 animateLoader();
 
 gsap.registerPlugin(ScrollTrigger);
@@ -137,18 +160,6 @@ $('html, body').css({
   'overflow': 'auto',
   'height': 'auto'
 });	
-
-function preloadImages(container) {
-  const images = container.querySelectorAll("img");
-  const promises = [];
-  images.forEach((img) => {
-    if (img.complete) return;
-    promises.push(new Promise((resolve) => {
-      img.onload = img.onerror = resolve;
-    }));
-  });
-  return Promise.all(promises);
-}
   
 const { createApp, ref, watch, onMounted, nextTick } = Vue;
 const { createRouter, createWebHistory, useRoute, useRouter } = VueRouter;
