@@ -797,8 +797,6 @@ tl.to(footer, {
 }); 
 		 	                                                                                                                  
 });	
-
-ScrollTrigger.refresh();
 	
 }, container); /* ctx */
 		
