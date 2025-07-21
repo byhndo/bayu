@@ -1,4 +1,4 @@
-function preloadImages(container) {
+/*function preloadImages(container) {
   const images = container.querySelectorAll("img");
   const promises = [];
   images.forEach((img) => {
@@ -8,7 +8,11 @@ function preloadImages(container) {
     }));
   });
   return Promise.all(promises);
-}
+} */
+
+imagesLoaded( document.querySelector('#app'), function( instance ) {
+  console.log('all images are loaded');
+});
 
 window.addEventListener("load", function() {
 	
@@ -163,7 +167,7 @@ const app = createApp({
 
     const afterEnter = async (el, done) => {                   
      await nextTick();
-     await preloadImages(el);
+    // await preloadImages(el);
      setupReveal(el);  
      ScrollTrigger.refresh();
      done();                       
