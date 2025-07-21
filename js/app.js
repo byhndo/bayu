@@ -1,10 +1,4 @@
-//window.addEventListener("load", function () {
-
-
-document.addEventListener("DOMContentLoaded", function(event) {
-window.onload = function() {
-window.requestAnimationFrame(function() {
-
+window.addEventListener("load", function () {
 	
 var width = 100,
   perfData = window.performance.timing,
@@ -813,7 +807,5 @@ ScrollTrigger.refresh();
 }
 	
 
-/* preloader */
+
 });      
-};  
-});
