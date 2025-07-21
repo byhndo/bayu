@@ -9,3 +9,11 @@ const router = VueRouter.createRouter({
   routes
 });
 
+router.afterEach(() => {
+    Vue.nextTick(() => {
+      $('main').imagesLoaded(() => {
+        console.log('Semua gambar di halaman ini telah dimuat');
+      });
+    });
+  });
+
