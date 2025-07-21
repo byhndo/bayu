@@ -11,10 +11,6 @@
 } */
 
 window.addEventListener("load", function() {
-
-imagesLoaded( document.querySelector('#app'), function( instance ) {
-  console.log('all images are loaded');
-});
 	
 var width = 100,
   perfData = window.performance.timing,
@@ -168,6 +164,7 @@ const app = createApp({
     const afterEnter = async (el, done) => {                   
      await nextTick();
     // await preloadImages(el);
+     imagesLoaded(el);
      setupReveal(el);  
      ScrollTrigger.refresh();
      done();                       
