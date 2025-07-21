@@ -137,18 +137,28 @@ $('html, body').css({
   'height': 'auto'
 });	
 
+const loadedSrcSet = new Set();
+
 function preloadImages(container) {
   const images = container.querySelectorAll("img");
   const promises = [];
+
   images.forEach((img) => {
-    if (img.complete) return;
-    promises.push(new Promise((resolve) => {
-      img.onload = img.onerror = resolve;
-    }));
+    const src = img.getAttribute("src");
+    if (src && !loadedSrcSet.has(src)) {
+      loadedSrcSet.add(src);
+      const imgPreload = new Image();
+      const promise = new Promise((resolve) => {
+        imgPreload.onload = imgPreload.onerror = resolve;
+      });
+      imgPreload.src = src;
+      promises.push(promise);
+    }
   });
+
   return Promise.all(promises);
 }
-  
+ 
 const { createApp, ref, watch, onMounted, nextTick } = Vue;
 const { createRouter, createWebHistory, useRoute, useRouter } = VueRouter;
 
