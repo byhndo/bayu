@@ -138,7 +138,7 @@ $('html, body').css({
   'height': 'auto'
 });	
 
-function preloadImages(container) {
+/*function preloadImages(container) {
   const images = container.querySelectorAll("img");
   const promises = [];
   images.forEach((img) => {
@@ -148,7 +148,7 @@ function preloadImages(container) {
     }));
   });
   return Promise.all(promises);
-}
+}*/
 	
 const { createApp, ref, watch, onMounted, nextTick } = Vue;
 const { createRouter, createWebHistory, useRoute, useRouter } = VueRouter;
@@ -163,7 +163,7 @@ const app = createApp({
 
     const afterEnter = async (el, done) => {                   
      await nextTick();
-     await preloadImages(el);
+   //  await preloadImages(el);
      setupReveal(el);  
      ScrollTrigger.refresh();
      done();                       
