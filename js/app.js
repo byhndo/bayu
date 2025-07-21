@@ -160,7 +160,7 @@ const allImages = [
   'img/35.webp',
 ];
 
-function preloadImages(container) {
+/*function preloadImages(container) {
   const images = container.querySelectorAll("img");
   const promises = [];
   images.forEach((img) => {
@@ -170,7 +170,7 @@ function preloadImages(container) {
     }));
   });
   return Promise.all(promises);
-}
+}*/
 
 function preloadImageUrls(urls) {
   return Promise.all(
