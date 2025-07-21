@@ -138,7 +138,7 @@ $('html, body').css({
   'height': 'auto'
 });	
 
-/*function preloadImages(container) {
+function preloadImages(container) {
   const images = container.querySelectorAll("img");
   const promises = [];
   images.forEach((img) => {
@@ -148,12 +148,6 @@ $('html, body').css({
     }));
   });
   return Promise.all(promises);
-}*/
-
-function preloadImages(selector = 'img') {
-  return new Promise((resolve) => {
-    imagesLoaded(document.querySelectorAll(selector), { background: true }, resolve);
-  });
 }
 
 preloadImages().then(() => {		
