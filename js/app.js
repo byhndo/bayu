@@ -10,11 +10,11 @@
   return Promise.all(promises);
 } */
 
-imagesLoaded( '#app', { background: true }, function() {
-  console.log('#container background image loaded');
-});
-
 window.addEventListener("load", function() {
+
+imagesLoaded( document.querySelector('#app'), function( instance ) {
+  console.log('all images are loaded');
+});
 	
 var width = 100,
   perfData = window.performance.timing,
