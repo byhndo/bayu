@@ -33,9 +33,7 @@ function animateValue(id, start, end, duration) {
 
 async function animateLoader() {
   await new Promise((resolve) => setTimeout(resolve, time));
- 
-  await preloadImages(document);	
-
+	
   let percentBar = document.getElementById("precent");
   let loadingBar = document.getElementById("loader");
 	
@@ -137,28 +135,18 @@ $('html, body').css({
   'height': 'auto'
 });	
 
-const loadedSrcSet = new Set();
-
 function preloadImages(container) {
   const images = container.querySelectorAll("img");
   const promises = [];
-
   images.forEach((img) => {
-    const src = img.getAttribute("src");
-    if (src && !loadedSrcSet.has(src)) {
-      loadedSrcSet.add(src);
-      const imgPreload = new Image();
-      const promise = new Promise((resolve) => {
-        imgPreload.onload = imgPreload.onerror = resolve;
-      });
-      imgPreload.src = src;
-      promises.push(promise);
-    }
+    if (img.complete) return;
+    promises.push(new Promise((resolve) => {
+      img.onload = img.onerror = resolve;
+    }));
   });
-
   return Promise.all(promises);
 }
- 
+  
 const { createApp, ref, watch, onMounted, nextTick } = Vue;
 const { createRouter, createWebHistory, useRoute, useRouter } = VueRouter;
 
@@ -171,9 +159,9 @@ const app = createApp({
     const firstLoad = ref(true);
 
     const afterEnter = async (el, done) => {                   
-     await nextTick();   
+     await nextTick();
      await preloadImages(el);
-     setupReveal(el);
+     setupReveal(el);         
      done();                       
     };
 	  
