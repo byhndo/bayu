@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Error 404 Page Not Found - Bayu Handono</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="title" content="Error 404 Page Not Found - Bayu Handono">
+<meta name="description" content="Web Personal Bayu Handono">
+<meta name="keywords" content="Bayu Handono, Web Personal">
+<meta name="language" content="Indonesia">
+<meta name="author" content="Bayu Handono">
+<meta property="og:url" content="https://bayuhandono.site/404">
+<meta property="og:site_name" content="Bayu Handono">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bayu Handono">
+<meta property="og:description" content="Bayu Handono">
+<meta property="og:image" content="https://bayuhandono.site/img/unnamed.webp">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="300">
+<meta property="og:image:height" content="300">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:domain" content="bayuhandono.site/404">
+<meta property="twitter:url" content="https://bayuhandono.site/404">
+<meta name="twitter:title" content="Bayu Handono">
+<meta name="twitter:description" content="Bayu Handono">
+<meta name="twitter:image" content="https://bayuhandono.site/img/unnamed.webp">
+<meta name="twitter:site" content="@byhndo">
+<meta name="twitter:creator" content="@byhndo">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://bayuhandono.site/404">
+<link rel="icon" type="image/x-icon" href="favicon.png">
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/particles.css">
+<link rel="stylesheet" href="css/style.css">
+<style>
+html, body {
+ background: var(--bgloaderscreen);
+ font-family: var(--font2);
+ overflow: hidden;
+}
+
+.hidden {
+ position: absolute;
+ overflow: hidden;
+ width: 0;
+ height: 0;
+ pointer-events: none;
+}
+
+a {
+ color: inherit;
+}
+	
+a:hover, a:active{
+ opacity:1!important;
+}
+
+.container{
+ height:100dvh;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ margin-top:5dvh;
+}
+	
+.main{
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ flex-direction: column;
+} 
+	
+.box {
+ font-size: 30vw;
+ font-family: var(--font3);
+ color: var(--textloadercolor);
+ text-align: center;
+ text-transform: uppercase;
+ font-weight: 400;
+ user-select: none;
+ filter: url(#noise);
+ opacity:0;
+ visibility:hidden;
+}
+	
+.theme-404 {
+ --color-item-bg: transparent;
+ --color-button-bg: var(--textloadercolor);
+ --color-button-text: var(--bgloaderscreen);
+ --button-padding: 1rem 3.5rem .93rem;
+ --button-margin: 0;
+ --radius-button: 40px;
+ --border-button: 0;
+ padding-bottom:14rem;
+}
+
+#btn404{
+ text-transform: none;
+ font-family: var(--font2);
+ font-size:10.5px;
+ font-weight: var(--fwbtn);
+ text-align: center;
+}
+
+@media only screen and (orientation: landscape) {
+.container{
+ margin-top:35dvh;	
+}
+.box {
+ font-size: 20vw;
+}
+}
+	
+@media screen and (max-width: 760px) and (min-width: 600px) {
+.container{
+ margin-top:27dvh;	
+}
+.box {
+ font-size: 10vw;
+}
+}	
+</style>
+</head>
+<body>
+<div class="container">
+<div class="main theme-404">	
+<svg class="hidden">		
+<defs>
+<filter id='noise' x='0%' y='0%' width='100%' height='100%'>
+<feGaussianBlur in="SourceGraphic" stdDeviation="0" result="blur"></feGaussianBlur>
+<feColorMatrix in="blur" mode="matrix" values="	1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 14 -1" result="goo"></feColorMatrix>
+<feTurbulence type="fractalNoise" baseFrequency="0.009 1" numOctaves="1" seed="1" result="noise"></feTurbulence>
+<feDisplacementMap in="goo" in2="noise" scale="0" result="displacement"></feDisplacementMap>
+<feComposite in="SourceGraphic" in2="displacement" operator="atop"></feComposite>
+</filter>
+</defs>
+</svg>				  
+<div class="box">404</div>	
+<button id="btn404" class="particles-button" onclick="setTimeout(function(){ window.location.href='/'; }, 2500);">Home</button>
+</div>
+</div>
+<script src='js/anime.min.js'></script>
+<script src='js/gsap.js'></script>
+<script src='js/particles.js'></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+	
+window.addEventListener("pageshow", ()=>{
+	
+const feBlur = document.querySelector(`#noise feGaussianBlur`);
+const feDisplacementMap = document.querySelector(`#noise feDisplacementMap`);
+
+let primitiveValues = { stdDeviation: 0, scale: 0 };
+ 
+const tl = gsap.timeline({
+    defaults: {
+      duration: 2,
+      ease: 'expo.out',
+},
+   
+    onUpdate: function () {
+      feBlur.setAttribute('stdDeviation', primitiveValues.stdDeviation);
+      feDisplacementMap.setAttribute('scale', primitiveValues.scale); 
+    }
+  });
+
+tl.to(primitiveValues, { 
+    startAt: { stdDeviation: 40, scale: 100 },  
+    stdDeviation: 0,  
+    scale: 0 
+  }, 0)
+
+.to(".box", {
+    startAt: {
+      opacity: 0,  
+      scale: .6     
+    },
+    opacity: 1,  
+    autoAlpha:1,
+    scale: 1 
+  }, 0)
+});
+	
+(function () {
+  const arrOpts = [    
+    {
+      direction: 'bottom',
+      duration: 1000,
+      easing: 'easeInExpo'
+    }
+  ];
+
+  const items = document.querySelectorAll(".main");
+
+  items.forEach((el, pos) => {
+    let bttn = el.querySelector("button.particles-button");
+
+    if (!bttn) return; 
+
+    let particlesOpts = arrOpts[pos];
+    const particles = new Particles(bttn, particlesOpts);
+
+let tl = gsap.timeline()
+window.addEventListener("pageshow", ()=> {	 
+    tl.to(bttn, {
+      autoAlpha: 0,
+      onComplete: () => {
+        particles.integrate({
+          duration: 900,
+          easing: "easeOutSine"
+        });
+
+        gsap.to(bttn, {
+          duration: 1,	  
+          onComplete: () => {
+            bttn.style.opacity = "1";
+            bttn.style.visibility = "visible";
+          }
+        })
+      }
+    }, ">1.5")
+})
+      
+    bttn.addEventListener("click", () => {
+      particles.disintegrate();
+    });
+  });
+})();
+	
+});
+</script>
+</body>
+</html>
