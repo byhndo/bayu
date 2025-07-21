@@ -33,7 +33,9 @@ function animateValue(id, start, end, duration) {
 
 async function animateLoader() {
   await new Promise((resolve) => setTimeout(resolve, time));
-	
+ 
+  await preloadImages(document);	
+
   let percentBar = document.getElementById("precent");
   let loadingBar = document.getElementById("loader");
 	
@@ -160,7 +162,6 @@ const app = createApp({
 
     const afterEnter = async (el, done) => {                   
      await nextTick();            
-     await preloadImages(el);
      setupReveal(el);
      done();                       
     };
