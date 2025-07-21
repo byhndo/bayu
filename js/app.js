@@ -10,7 +10,7 @@ function preloadImages(container) {
   return Promise.all(promises);
 }
 
-window.addEventListener("load", async () ==> {
+window.addEventListener("load", async () => {
 await preloadImages(document);
 	
 var width = 100,
