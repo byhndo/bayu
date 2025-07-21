@@ -1,5 +1,5 @@
-window.addEventListener("load", function() {
-	
+window.addEventListener("load", function () {
+
 var width = 100,
   perfData = window.performance.timing,
   EstimatedTime = Math.abs(perfData.loadEventEnd - perfData.navigationStart),
@@ -136,31 +136,9 @@ const delaytl = .5;
 $('html, body').css({
   'overflow': 'auto',
   'height': 'auto'
-});
+});	
 
-const allImages = [
-  'img/1.webp',
-  'img/2.webp',
-  'img/3.webp',
-  'img/4.webp',
-  'img/5.webp',
-  'img/6.webp',
-  'img/7.webp',
-  'img/8.webp',
-  'img/9.webp',
-  'img/11.webp',
-  'img/12.webp',
-  'img/13.webp',
-  'img/14.webp',
-  'img/15.webp',
-  'img/16.webp',
-  'img/21.webp',
-  'img/22.webp',
-  'img/23.webp',
-  'img/35.webp',
-];
-
-/*function preloadImages(container) {
+function preloadImages(container) {
   const images = container.querySelectorAll("img");
   const promises = [];
   images.forEach((img) => {
@@ -170,21 +148,8 @@ const allImages = [
     }));
   });
   return Promise.all(promises);
-}*/
-
-function preloadImageUrls(urls) {
-  return Promise.all(
-    urls.map((url) => {
-      return new Promise((resolve) => {
-        const img = new Image();
-        img.onload = img.onerror = resolve;
-        img.src = url;
-      });
-    })
-  );
 }
-	
-preloadImagesUrls(allImages).then(() => {
+  
 const { createApp, ref, watch, onMounted, nextTick } = Vue;
 const { createRouter, createWebHistory, useRoute, useRouter } = VueRouter;
 
@@ -198,7 +163,7 @@ const app = createApp({
 
     const afterEnter = async (el, done) => {                   
      await nextTick();
-    // await preloadImages(el);
+     await preloadImages(el);
      setupReveal(el);  
      ScrollTrigger.refresh();
      done();                       
@@ -279,8 +244,6 @@ const app = createApp({
 
 app.use(router);
 app.mount("#app");
-
-});
 				
 const title = document.querySelector("h1");
 const feBlur = document.querySelector(`#noisetitle feGaussianBlur`);
