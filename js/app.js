@@ -171,10 +171,10 @@ const app = createApp({
     const firstLoad = ref(true);
 
     const afterEnter = async (el, done) => {                   
-      await nextTick();             
-      await preloadImages(el);      
-      setupReveal(el);              
-      done();                       
+     await nextTick();   
+     await preloadImages(el);
+     setupReveal(el);
+     done();                       
     };
 	  
     const afterLeave = (el) => {
@@ -187,7 +187,7 @@ const app = createApp({
    const goToBio = () => {
       if (route.path === '/bio') {
         window.scrollTo({ top: 0, behavior: 'smooth' });
-      
+     // triggerAnimation(); 
       } else {
         bg.value = 'bio';
         router.push('/bio');
@@ -197,7 +197,7 @@ const app = createApp({
     const goToPhotos = () => {
       if (route.path === '/photos') {
         window.scrollTo({ top: 0, behavior: 'smooth' });
-     
+     // triggerAnimation(); 
       } else {
         bg.value = 'photos';
         router.push('/photos');
@@ -208,20 +208,16 @@ const app = createApp({
     animePath(bg.value);      
     };
 
-    onMounted(async () => {
-  if (route.path !== '/bio') {
-    router.replace('/bio');      
-    bg.value = 'bio';
-    return; 
-  }
-
-  await nextTick();              
-  await preloadImages(container.value);  
-  setupReveal(container.value);    
-  triggerAnimation();          
-  firstLoad.value = false;
-});
-
+    onMounted(() => {
+      if (route.path !== '/bio') {
+        router.replace('/bio');
+        bg.value = 'bio';
+      }
+      nextTick(() => {
+        triggerAnimation();
+        firstLoad.value = false;
+      });
+    });
 
     watch(
       () => route.path,
@@ -801,6 +797,8 @@ tl.to(footer, {
 }); 
 		 	                                                                                                                  
 });	
+
+ScrollTrigger.refresh();
 	
 }, container); /* ctx */
 		
