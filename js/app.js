@@ -10,8 +10,8 @@
   return Promise.all(promises);
 } */
 
-imagesLoaded( document.querySelector('#app'), function( instance ) {
-  console.log('all images are loaded');
+imagesLoaded( '#app', { background: true }, function() {
+  console.log('#container background image loaded');
 });
 
 window.addEventListener("load", function() {
