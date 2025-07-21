@@ -138,10 +138,27 @@ $('html, body').css({
   'height': 'auto'
 });
 
-const allImages = [];
-  for (let i = 1; i <= 18; i++) {
-    allImages.push(`img/${i}.webp`);
-}
+const allImages = [
+  'img/1.webp',
+  'img/2.webp',
+  'img/3.webp',
+  'img/4.webp',
+  'img/5.webp',
+  'img/6.webp',
+  'img/7.webp',
+  'img/8.webp',
+  'img/9.webp',
+  'img/11.webp',
+  'img/12.webp',
+  'img/13.webp',
+  'img/14.webp',
+  'img/15.webp',
+  'img/16.webp',
+  'img/21.webp',
+  'img/22.webp',
+  'img/23.webp',
+  'img/35.webp',
+];
 
 function preloadImages(container) {
   const images = container.querySelectorAll("img");
