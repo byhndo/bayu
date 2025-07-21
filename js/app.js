@@ -171,10 +171,10 @@ const app = createApp({
     const firstLoad = ref(true);
 
     const afterEnter = async (el, done) => {                   
-     await nextTick();   
-     await preloadImages(el);
-     setupReveal(el);
-     done();                       
+      await preloadImages(el);      
+      await nextTick();             
+      await setupReveal(el);        
+      done();                       
     };
 	  
     const afterLeave = (el) => {
