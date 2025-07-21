@@ -1,5 +1,5 @@
 window.addEventListener("load", function () {
-	
+
 var width = 100,
   perfData = window.performance.timing,
   EstimatedTime = Math.abs(perfData.loadEventEnd - perfData.navigationStart),
@@ -171,10 +171,10 @@ const app = createApp({
     const firstLoad = ref(true);
 
     const afterEnter = async (el, done) => {                   
-      await preloadImages(el);      
-      await nextTick();             
-      await setupReveal(el);        
-      done();                       
+     await nextTick();   
+     await preloadImages(el);
+     setupReveal(el);
+     done();                       
     };
 	  
     const afterLeave = (el) => {
@@ -471,6 +471,7 @@ else if (bg === 'photos' && photosPath) {
     .to(photosPath, {duration: .5, ease: "power1", attr: { d: paths.step2.filled } });  
 
 }
+
 }
 	
 const lenis = new Lenis({
@@ -501,7 +502,7 @@ gsap.ticker.add((time)=>{
 gsap.ticker.lagSmoothing(0);
 
 	
-async function setupReveal(container) {
+function setupReveal(container) {
 container.ctx = gsap.context(() => {	
 	
 const RevealBoxsme = container.querySelectorAll(".boxme");
@@ -796,16 +797,13 @@ tl.to(footer, {
 }); 
 		 	                                                                                                                  
 });	
+
+ScrollTrigger.refresh();
 	
 }, container); /* ctx */
-
-ScrollTrigger.refresh(); 
-return Promise.resolve();	
 		
 } /* setupReveal */
 	 
 }
 	
-
-/* preloader */
-});      
+})
