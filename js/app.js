@@ -43,8 +43,11 @@ async function animateLoader() {
   DOM.path = DOM.intro.querySelector("path.goey");
 	
   let tl = gsap.timeline({
-    paused: true,
-    onComplete: contentShow
+  paused: true,
+  onComplete: () => {
+    contentShow(); 
+    ScrollTrigger.refresh(); 
+   }
   });
 	    	
   tl.to(".percentage", {
@@ -161,7 +164,8 @@ const app = createApp({
     const afterEnter = async (el, done) => {                   
      await nextTick();
      await preloadImages(el);
-     setupReveal(el);         
+     setupReveal(el);  
+     ScrollTrigger.refresh();
      done();                       
     };
 	  
@@ -175,7 +179,7 @@ const app = createApp({
    const goToBio = () => {
       if (route.path === '/bio') {
         window.scrollTo({ top: 0, behavior: 'smooth' });
-     // triggerAnimation(); 
+      
       } else {
         bg.value = 'bio';
         router.push('/bio');
@@ -185,7 +189,7 @@ const app = createApp({
     const goToPhotos = () => {
       if (route.path === '/photos') {
         window.scrollTo({ top: 0, behavior: 'smooth' });
-     // triggerAnimation(); 
+     
       } else {
         bg.value = 'photos';
         router.push('/photos');
@@ -785,8 +789,6 @@ tl.to(footer, {
 }); 
 		 	                                                                                                                  
 });	
-
-ScrollTrigger.refresh();
 	
 }, container); /* ctx */
 		
