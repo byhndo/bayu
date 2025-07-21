@@ -10,8 +10,7 @@ function preloadImages(container) {
   return Promise.all(promises);
 }
 
-window.addEventListener("load", async () => {
-await preloadImages(document);
+window.addEventListener("load", function() {
 	
 var width = 100,
   perfData = window.performance.timing,
@@ -164,7 +163,7 @@ const app = createApp({
 
     const afterEnter = async (el, done) => {                   
      await nextTick();
-  // await preloadImages(el);
+     await preloadImages(el);
      setupReveal(el);  
      ScrollTrigger.refresh();
      done();                       
