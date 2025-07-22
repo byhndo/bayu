@@ -150,9 +150,9 @@ $('html, body').css({
   return Promise.all(promises);
 }*/
 
-imagesLoaded(el);
+imagesLoaded( document.querySelector('main'), function( instance ) {
+  console.log('all images are loaded');
 });
-
 	
 const { createApp, ref, watch, onMounted, nextTick } = Vue;
 const { createRouter, createWebHistory, useRoute, useRouter } = VueRouter;
