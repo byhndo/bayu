@@ -161,9 +161,9 @@ const app = createApp({
     const bg = ref('bio');
     const firstLoad = ref(true);
 
-    const afterEnter = async (el, done) => {                   
-     await nextTick();
+    const afterEnter = async (el, done) => {                        
      await preloadImages(el);
+     await nextTick();
      setupReveal(el);  
      ScrollTrigger.refresh();
      done();                       
