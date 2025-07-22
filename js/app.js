@@ -150,8 +150,8 @@ $('html, body').css({
   return Promise.all(promises);
 }*/
 
-$('body').imagesLoaded( function() {
-  // images have loaded
+imagesLoaded( document.querySelector('#app'), function( instance ) {
+  console.log('all images are loaded');
 });
 
 	
