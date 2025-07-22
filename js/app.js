@@ -162,14 +162,13 @@ const app = createApp({
     const firstLoad = ref(true);
 
     const beforeEnter = async (el, done) => {
-      await nextTick();              
       await preloadImages(el);       
+      await nextTick();                    
       ScrollTrigger.refresh();
       done();
     };
 
-    const afterEnter = async (el, done) => {                        
-      //await preloadImages(el); 
+    const afterEnter = async (el, done) => {                              
       await nextTick();
       setupReveal(el);  
       ScrollTrigger.refresh();
