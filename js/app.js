@@ -161,12 +161,19 @@ const app = createApp({
     const bg = ref('bio');
     const firstLoad = ref(true);
 
+    const beforeEnter = async (el, done) => {
+      await nextTick();              
+      await preloadImages(el);       
+      ScrollTrigger.refresh();
+      done();
+    };
+
     const afterEnter = async (el, done) => {                        
-     await preloadImages(el);
-     await nextTick();
-     setupReveal(el);  
-     ScrollTrigger.refresh();
-     done();                       
+     // await preloadImages(el); 
+      await nextTick();
+      setupReveal(el);  
+      ScrollTrigger.refresh();
+      done();                       
     };
 	  
     const afterLeave = (el) => {
@@ -236,6 +243,7 @@ const app = createApp({
       bg,
       goToBio,
       goToPhotos,
+      beforeEnter,
       afterEnter,
       afterLeave,
     };
