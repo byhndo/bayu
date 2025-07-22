@@ -150,7 +150,7 @@ $('html, body').css({
   return Promise.all(promises);
 }*/
 
-$('#app').imagesLoaded( function() {
+$('body').imagesLoaded( function() {
   // images have loaded
 });
 
