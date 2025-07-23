@@ -230,12 +230,12 @@ window.addEventListener("pageshow", ()=> {
 
 const btn = document.getElementById("btn404");
 if (btn) {
-  btn.addEventListener("click", () => {
-    setTimeout(() => {
-      const base = '/' + window.location.pathname.split('/')[1] + '/';
-      location.href = '/bayu/';
-    }, 2500);
-  });
+  btn.addEventListener("click", () => {
+    setTimeout(() => {
+      const base = '/' + window.location.pathname.split('/')[1] + '/';
+      location.replace(base);
+    }, 2500);
+  });
 }
 	
 });
