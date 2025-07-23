@@ -209,11 +209,11 @@ const app = createApp({
     onMounted(() => {
 
 	    
-    if (sessionStorage.getItem("animateLoader") !== "true") {
+    if (sessionStorage.getItem("animateValue") !== "true") {
       const tl = gsap.timeline();
       tl.to(".preloader-wrap", { duration: 1 });
       tl.eventCallback("onComplete", () => {
-        sessionStorage.setItem("animateLoader", "true");
+        sessionStorage.setItem("animateValue", "true");
       });
     }
 
