@@ -5,10 +5,6 @@ const routes = [
   { path: '/:pathMatch(.*)*', redirect: '/' }
 ];
 
-const base = location.pathname.split('/')[1]
-  ? '/' + location.pathname.split('/')[1] + '/'
-  : '/';
-
 const router = VueRouter.createRouter({
   history: VueRouter.createWebHistory(base),
   routes
