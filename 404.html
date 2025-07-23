@@ -228,15 +228,13 @@ window.addEventListener("pageshow", ()=> {
   });
 })();
 
-const repo = location.pathname.split('/')[1];
-const isRoot = location.pathname === `/${repo}/`;
-
-if (!isRoot) {
-  document.getElementById("btn404").addEventListener("click", () => {
-    setTimeout(() => {
-      location.href = '/' + repo + '/';
-    }, 2500);
-  });
+const btn = document.getElementById("btn404");
+    if (btn) {
+      btn.addEventListener("click", () => {
+        setTimeout(() => {
+          location.href = '/';
+        }, 2500);
+      });
 }
 	
 });
