@@ -206,7 +206,22 @@ const app = createApp({
     animePath(bg.value);      
     };
 
-    onMounted(() => {		    
+    onMounted(() => {
+
+
+
+    if (sessionStorage.getItem("introAnimationPlayed") !== "true") {
+      const tl = gsap.timeline();
+      tl.to(".preloader-wrap", { duration: 1 });
+      tl.eventCallback("onComplete", () => {
+        sessionStorage.setItem("introAnimationPlayed", "true");
+      });
+    }
+
+
+
+
+	    
       if (route.path !== '/bio') {
         router.replace('/bio');
         bg.value = 'bio';
