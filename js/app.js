@@ -169,7 +169,18 @@ const app = createApp({
 
     const afterEnter = async (el, done) => {                              
       await nextTick();
-      setupReveal(el);  
+	    
+      const routePath = route.path;
+	
+  if (routePath === "/bio" && !sessionStorage.getItem("bioAnimated")) {
+    setupReveal(el);
+    sessionStorage.setItem("bioAnimated", "true");
+  }
+  else if (routePath === "/photos" && !sessionStorage.getItem("photosAnimated")) {
+    setupReveal(el);
+    sessionStorage.setItem("photosAnimated", "true");
+  }
+
       ScrollTrigger.refresh();
       done();                       
     };
@@ -179,7 +190,11 @@ const app = createApp({
         el.ctx.revert();
         delete el.ctx;	      
       }
-    };
+
+    const path = route.path;
+      if (path === "/bio") sessionStorage.removeItem("bioAnimated");
+      if (path === "/photos") sessionStorage.removeItem("photosAnimated");
+};
 
    const goToBio = () => {
       if (route.path === '/bio') {
