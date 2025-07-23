@@ -6,6 +6,6 @@ const routes = [
 
 const base = window.location.pathname.split('/')[1];
 const router = VueRouter.createRouter({
-  history: VueRouter.createWebHistory(`/${base}/`),
+  history: VueRouter.createWebHistory(`/bayu/`),
   routes
 });
