@@ -44,7 +44,6 @@ async function animateLoader() {
 	
   let tl = gsap.timeline({
   paused: true,
-  once: true,
   onComplete: () => {
     contentShow(); 
     ScrollTrigger.refresh(); 
