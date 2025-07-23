@@ -43,9 +43,17 @@ async function animateLoader() {
   DOM.path = DOM.intro.querySelector("path.goey");
 
 
-        
 
-if (sessionStorage.getItem("introAnimationPlayed") !== "true") {
+    
+
+    if (sessionStorage.getItem("introAnimationPlayed") !== "true") {
+      const tl = gsap.timeline();
+      tl.to(".preloader-wrap", { duration: 1 });
+      tl.eventCallback("onComplete", () => {
+        sessionStorage.setItem("introAnimationPlayed", "true");
+      });
+    }
+
 
 	
   let tl = gsap.timeline({
@@ -58,10 +66,7 @@ if (sessionStorage.getItem("introAnimationPlayed") !== "true") {
 
 
 	
-	tl.eventCallback("onComplete", () => {
-        sessionStorage.setItem("introAnimationPlayed", "true");
-      });
-}
+	
 	    	
   tl.to(".percentage", {
     autoAlpha: 0,
