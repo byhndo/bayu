@@ -41,6 +41,12 @@ async function animateLoader() {
   DOM.intro = document.querySelector(".preloader-wrap");
   DOM.shape = DOM.intro.querySelector("svg.shape");
   DOM.path = DOM.intro.querySelector("path.goey");
+
+
+        
+
+if (sessionStorage.getItem("introAnimationPlayed") !== "true") {
+
 	
   let tl = gsap.timeline({
   paused: true,
@@ -49,6 +55,13 @@ async function animateLoader() {
     ScrollTrigger.refresh(); 
    }
   });
+
+
+	
+	tl.eventCallback("onComplete", () => {
+        sessionStorage.setItem("introAnimationPlayed", "true");
+      });
+}
 	    	
   tl.to(".percentage", {
     autoAlpha: 0,
@@ -206,22 +219,7 @@ const app = createApp({
     animePath(bg.value);      
     };
 
-    onMounted(() => {
-
-
-
-    if (sessionStorage.getItem("introAnimationPlayed") !== "true") {
-      const tl = gsap.timeline();
-      tl.to(".preloader-wrap", { duration: 1 });
-      tl.eventCallback("onComplete", () => {
-        sessionStorage.setItem("introAnimationPlayed", "true");
-      });
-    }
-
-
-
-
-	    
+    onMounted(() => {	    
       if (route.path !== '/bio') {
         router.replace('/bio');
         bg.value = 'bio';
