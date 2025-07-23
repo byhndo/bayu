@@ -204,23 +204,7 @@ const app = createApp({
     animePath(bg.value);      
     };
 
-    onMounted(() => {
-
-
-const loaderr = document.querySelector('.preloader-wrap');
-        if (!sessionStorage.viewed) {
-          // Baru pertama buka di sesi ini
-          loaderr.classList.add('hidden');
-          sessionStorage.viewed = "1";
-        } else {
-          // Sudah pernah dilihat, langsung hilangin preloader
-          loaderr.style.display = 'none';
-	}
-
-
-
-
-	    
+    onMounted(() => {	    
       if (route.path !== '/bio') {
         router.replace('/bio');
         bg.value = 'bio';
