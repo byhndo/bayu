@@ -237,13 +237,11 @@ window.addEventListener("pageshow", ()=> {
 });
 </script>
 <script>
+  document.getElementById("btn404").addEventListener("click", () => {
   const repo = location.pathname.split('/')[1];
-const redirectDelay = 2500; 
-
-window.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
     location.replace('/' + repo + '/');
-  }, redirectDelay);
+  }, 2500); 
 });
 </script>
 </body>
