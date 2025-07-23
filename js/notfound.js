@@ -19,5 +19,15 @@ const NotFound = {
 </div>
 </div>
 
-`
+`,
+
+  mounted() {
+  const btn = document.getElementById("btn404");
+  if (btn) {
+    btn.addEventListener("click", () => {
+      window.location.href = "/bio";
+    });
+  }
+}
+  
 }
