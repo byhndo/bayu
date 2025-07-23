@@ -6,6 +6,6 @@ const routes = [
 ];
 
 const router = VueRouter.createRouter({
-  history: VueRouter.createWebHistory(base),
+  history: VueRouter.createWebHistory(/bayu/),
   routes
 });
