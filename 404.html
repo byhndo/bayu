@@ -150,6 +150,16 @@ a:hover, a:active{
 <script src='js/gsap.js'></script>
 <script src='js/particles.js'></script>
 <script>
+const repo = location.pathname.split('/')[1];
+const redirectDelay = 2500; 
+
+window.addEventListener("DOMContentLoaded", () => {
+  setTimeout(() => {
+    location.replace('/' + repo + '/');
+  }, redirectDelay);
+});
+
+
 document.addEventListener("DOMContentLoaded", function() {
 	
 window.addEventListener("pageshow", ()=>{
@@ -235,17 +245,6 @@ window.addEventListener("pageshow", ()=> {
 })();
 	
 });
-</script>
-<script>
-const repo = location.pathname.split('/')[1];
-const redirectDelay = 2500; 
-
-window.addEventListener("DOMContentLoaded", () => {
-  setTimeout(() => {
-    location.replace('/' + repo + '/');
-  }, redirectDelay);
-});
-
 </script>
 </body>
 </html>
