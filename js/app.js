@@ -1,6 +1,57 @@
 window.addEventListener("load", function () {
 
-var width = 100,
+
+
+  const navEntries = performance.getEntriesByType("navigation");
+  const isReload = navEntries.length > 0 && navEntries[0].type === "reload";
+
+  if (isReload) {
+    
+    $(".loadbar").css("width", "100%");
+    $("#precent").text("100");
+    $("#preloader").fadeOut(500); 
+  } else {
+
+    var width = 100,
+      perfData = window.performance.timing,
+      EstimatedTime = Math.abs(perfData.loadEventEnd - perfData.navigationStart),
+      time = Math.floor((EstimatedTime / 1000) % 60) * 100;
+
+
+    if (time === 0) time = 2000;
+
+    $(".loadbar").animate({
+      width: width + "%"
+    }, time);
+
+    var PercentageID = $("#precent"),
+      start = 0,
+      end = 100,
+      duration = time;
+
+    animateValue(PercentageID, start, end, duration);
+
+    function animateValue(id, start, end, duration) {
+      var range = end - start,
+        current = start,
+        increment = end > start ? 1 : -1,
+        stepTime = Math.abs(Math.floor(duration / range)),
+        obj = $(id);
+
+      var timer = setInterval(function () {
+        current += increment;
+        $(obj).text(current);
+        if (current == end) {
+          clearInterval(timer);
+          $("#preloader").fadeOut(500); 
+        }
+      }, stepTime);
+    }
+  }
+
+
+	
+/*var width = 100,
   perfData = window.performance.timing,
   EstimatedTime = Math.abs(perfData.loadEventEnd - perfData.navigationStart),
   time = Math.floor((EstimatedTime / 1000) % 60) * 100;
@@ -29,7 +80,7 @@ function animateValue(id, start, end, duration) {
       clearInterval(timer);
     }
   }, stepTime);
-}
+} */
 
 async function animateLoader() {
   await new Promise((resolve) => setTimeout(resolve, time));
