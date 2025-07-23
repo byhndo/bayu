@@ -237,12 +237,8 @@ window.addEventListener("pageshow", ()=> {
 });
 </script>
 <script>
-  document.getElementById("btn404").addEventListener("click", () => {
   const repo = location.pathname.split('/')[1];
-  setTimeout(() => {
-    location.replace('/' + repo + '/');
-  }, 2500); 
-});
+location.replace('/' + repo + '/');
 </script>
 </body>
 </html>
