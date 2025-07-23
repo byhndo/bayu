@@ -154,14 +154,7 @@ const repo = location.pathname.split('/')[1];
 const redirectDelay = 2500; 
 
 window.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("btn404").addEventListener("click", () => {
-    const repo = location.pathname.split('/')[1];
-        
-    setTimeout(() => {
-      location.replace('/' + repo + '/');
-    }, 2500); // 
-  });
-
+	
 window.addEventListener("pageshow", ()=>{
 	
 const feBlur = document.querySelector(`#noise feGaussianBlur`);
@@ -243,6 +236,14 @@ window.addEventListener("pageshow", ()=> {
     });
   });
 })();
+
+document.getElementById("btn404").addEventListener("click", () => {
+    const repo = location.pathname.split('/')[1];
+        
+    setTimeout(() => {
+      location.replace('/' + repo + '/');
+    }, 2500); 
+  });	
 	
 });
 </script>
