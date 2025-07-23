@@ -169,6 +169,7 @@ const app = createApp({
 
     const afterEnter = async (el, done) => {                              
       await nextTick();
+      setupReveal(el);
       ScrollTrigger.refresh();
       done();                       
     };
