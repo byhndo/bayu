@@ -146,10 +146,6 @@ a:hover, a:active{
 <button id="btn404" class="particles-button" onclick="setTimeout(function(){ window.location.href='/'; }, 2500);">Home</button>
 </div>
 </div>
-<script>
-  const repo = location.pathname.split('/')[1];
-  location.replace('/' + repo + '/');
-</script>
 <script src='js/anime.min.js'></script>
 <script src='js/gsap.js'></script>
 <script src='js/particles.js'></script>
@@ -238,6 +234,16 @@ window.addEventListener("pageshow", ()=> {
   });
 })();
 	
+});
+</script>
+<script>
+  const repo = location.pathname.split('/')[1];
+const redirectDelay = 2500; 
+
+window.addEventListener("DOMContentLoaded", () => {
+  setTimeout(() => {
+    location.replace('/' + repo + '/');
+  }, redirectDelay);
 });
 </script>
 </body>
