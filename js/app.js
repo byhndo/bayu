@@ -40,22 +40,7 @@ async function animateLoader() {
   const DOM = {};
   DOM.intro = document.querySelector(".preloader-wrap");
   DOM.shape = DOM.intro.querySelector("svg.shape");
-  DOM.path = DOM.intro.querySelector("path.goey");
-
-
-
-    
-
-    if (sessionStorage.getItem("introAnimationPlayed") !== "true") {
-      const tl = gsap.timeline();
-      tl.to(".preloader-wrap", { duration: 1 });
-      tl.eventCallback("onComplete", () => {
-        sessionStorage.setItem("introAnimationPlayed", "true");
-      });
-    }
-
-
-	
+  DOM.path = DOM.intro.querySelector("path.goey");	
   let tl = gsap.timeline({
   paused: true,
   onComplete: () => {
@@ -63,11 +48,7 @@ async function animateLoader() {
     ScrollTrigger.refresh(); 
    }
   });
-
-
-	
-	
-	    	
+		    	
   tl.to(".percentage", {
     autoAlpha: 0,
     duration: 1,
