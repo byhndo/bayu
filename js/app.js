@@ -80,11 +80,9 @@ async function animateLoader() {
 	    	  	
   (function show() {
     const arrOpts = [{      
-      direction: 'top',
-      duration: 1400,
-      speed: 1.5,
-      oscillationCoefficient: 15,
-      direction: 'top'
+      direction: 'bottom',
+      duration: 1000,
+      easing: 'easeInExpo'
     }];
 
     const it = document.querySelectorAll(".wrapbtnloader");
