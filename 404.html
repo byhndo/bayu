@@ -150,11 +150,8 @@ a:hover, a:active{
 <script src='js/gsap.js'></script>
 <script src='js/particles.js'></script>
 <script>
-const repo = location.pathname.split('/')[1];
-const redirectDelay = 2500; 
+window.addEventListener("load", function () {
 
-window.addEventListener("DOMContentLoaded", () => {
-	
 window.addEventListener("pageshow", ()=>{
 	
 const feBlur = document.querySelector(`#noise feGaussianBlur`);
@@ -236,6 +233,9 @@ window.addEventListener("pageshow", ()=> {
     });
   });
 })();
+
+const repo = location.pathname.split('/')[1];
+const redirectDelay = 2500;
 
 document.getElementById("btn404").addEventListener("click", () => {
     const repo = location.pathname.split('/')[1];
