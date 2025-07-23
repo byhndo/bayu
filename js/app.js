@@ -31,12 +31,6 @@ function animateValue(id, start, end, duration) {
   }, stepTime);
 } 
 
-async function animateLoader() {
-  await new Promise((resolve) => setTimeout(resolve, time));
-	
-  let percentBar = document.getElementById("precent");
-  let loadingBar = document.getElementById("loader");
-
 
 var hasPlayed = sessionStorage.getItem("animateLoader");
  
@@ -47,10 +41,14 @@ if (!hasPlayed) {
       sessionStorage.setItem("animateLoader", true);
     }
   });
-}
+}	
 
-
+async function animateLoader() {
+  await new Promise((resolve) => setTimeout(resolve, time));
 	
+  let percentBar = document.getElementById("precent");
+  let loadingBar = document.getElementById("loader");
+
   const DOM = {};
   DOM.intro = document.querySelector(".preloader-wrap");
   DOM.shape = DOM.intro.querySelector("svg.shape");
