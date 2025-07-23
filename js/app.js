@@ -44,6 +44,7 @@ async function animateLoader() {
 	
   let tl = gsap.timeline({
   paused: true,
+  once: true,
   onComplete: () => {
     contentShow(); 
     ScrollTrigger.refresh(); 
@@ -125,18 +126,6 @@ async function animateLoader() {
 }
 
 animateLoader();
-
-
-var hasPlayed = sessionStorage.getItem("animateLoader");
- 
-if (!hasPlayed) {
-
-  gsap.to(".preloader-wrap", {
-    onComplete: function() {
-      sessionStorage.setItem("animateLoader", true);
-    }
-  });
-}	
 
 gsap.registerPlugin(ScrollTrigger);
 function contentShow() {
