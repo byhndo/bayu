@@ -38,13 +38,16 @@ async function animateLoader() {
   let loadingBar = document.getElementById("loader");
 
 
-const hasPlayed = sessionStorage.getItem("animateLoader");
-
+var hasPlayed = sessionStorage.getItem("animateLoader");
+ 
 if (!hasPlayed) {
-  animateLoader().then(() => {
-    sessionStorage.setItem("animateLoader", "true");
+
+  gsap.to(".preloader-wrap", {
+    onComplete: function() {
+      sessionStorage.setItem("animateLoader", true);
+    }
   });
-} else {
+}
 
 
 	
@@ -60,10 +63,6 @@ if (!hasPlayed) {
     ScrollTrigger.refresh(); 
    }
   });
-
-
-}
-	
 	    	
   tl.to(".percentage", {
     autoAlpha: 0,
