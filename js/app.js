@@ -31,18 +31,6 @@ function animateValue(id, start, end, duration) {
   }, stepTime);
 } 
 
-
-var hasPlayed = sessionStorage.getItem("animateLoader");
- 
-if (!hasPlayed) {
-
-  gsap.to(".preloader-wrap", {
-    onComplete: function() {
-      sessionStorage.setItem("animateLoader", true);
-    }
-  });
-}	
-
 async function animateLoader() {
   await new Promise((resolve) => setTimeout(resolve, time));
 	
@@ -137,6 +125,18 @@ async function animateLoader() {
 }
 
 animateLoader();
+
+
+var hasPlayed = sessionStorage.getItem("animateLoader");
+ 
+if (!hasPlayed) {
+
+  gsap.to(".preloader-wrap", {
+    onComplete: function() {
+      sessionStorage.setItem("animateLoader", true);
+    }
+  });
+}	
 
 gsap.registerPlugin(ScrollTrigger);
 function contentShow() {
