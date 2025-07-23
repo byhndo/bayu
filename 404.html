@@ -228,11 +228,16 @@ window.addEventListener("pageshow", ()=> {
   });
 })();
 
-document.getElementById("btn404").addEventListener("click", () => {
-  setTimeout(() => {
-    location.replace('/');
-  }, 2500);
-});
+const repo = location.pathname.split('/')[1];
+const isRoot = location.pathname === `/${repo}/`;
+
+if (!isRoot) {
+  document.getElementById("btn404").addEventListener("click", () => {
+    setTimeout(() => {
+      location.href = '/' + repo + '/';
+    }, 2500);
+  });
+}
 	
 });
 </script>
