@@ -36,6 +36,17 @@ async function animateLoader() {
 	
   let percentBar = document.getElementById("precent");
   let loadingBar = document.getElementById("loader");
+
+
+const hasPlayed = sessionStorage.getItem("animateLoader");
+
+if (!hasPlayed) {
+  animateLoader().then(() => {
+    sessionStorage.setItem("animateLoader", "true");
+  });
+} else {
+
+
 	
   const DOM = {};
   DOM.intro = document.querySelector(".preloader-wrap");
@@ -49,6 +60,10 @@ async function animateLoader() {
     ScrollTrigger.refresh(); 
    }
   });
+
+
+}
+	
 	    	
   tl.to(".percentage", {
     autoAlpha: 0,
