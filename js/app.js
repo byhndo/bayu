@@ -1,4 +1,18 @@
 window.addEventListener("load", function () {
+
+
+
+if (!sessionStorage.viewed){
+  const loader = document.querySelector(".preloader-wrap");
+    loader.className += " hidden";
+    sessionStorage.viewed = 1;
+  }else{
+  const loader = document.querySelector(".preloader-wrap");
+    loader.style.display = "none";
+  }
+
+
+
 	
 var width = 100,
   perfData = window.performance.timing,
