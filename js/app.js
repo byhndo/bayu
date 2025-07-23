@@ -1,18 +1,4 @@
 window.addEventListener("load", function () {
-
-
-
-if (!sessionStorage.viewed){
-  const loader = document.querySelector(".preloader-wrap");
-    loader.className += " hidden";
-    sessionStorage.viewed = 1;
-  }else{
-  const loader = document.querySelector(".preloader-wrap");
-    loader.style.display = "none";
-  }
-
-
-
 	
 var width = 100,
   perfData = window.performance.timing,
@@ -218,7 +204,23 @@ const app = createApp({
     animePath(bg.value);      
     };
 
-    onMounted(() => {	    
+    onMounted(() => {
+
+
+const loaderr = document.querySelector('.preloader-wrap');
+        if (!sessionStorage.viewed) {
+          // Baru pertama buka di sesi ini
+          loaderr.classList.add('hidden');
+          sessionStorage.viewed = "1";
+        } else {
+          // Sudah pernah dilihat, langsung hilangin preloader
+          loaderr.style.display = 'none';
+	}
+
+
+
+
+	    
       if (route.path !== '/bio') {
         router.replace('/bio');
         bg.value = 'bio';
