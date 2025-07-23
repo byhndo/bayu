@@ -234,16 +234,11 @@ window.addEventListener("pageshow", ()=> {
   });
 })();
 
-const repo = location.pathname.split('/')[1];
-const redirectDelay = 2500;
-
 document.getElementById("btn404").addEventListener("click", () => {
-    const repo = location.pathname.split('/')[1];
-        
-    setTimeout(() => {
-      location.replace('/' + repo + '/');
-    }, 2500); 
-  });	
+  setTimeout(() => {
+    location.replace('/bayu/');
+  }, 2500);
+});
 	
 });
 </script>
