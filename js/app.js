@@ -354,10 +354,12 @@ bttn.addEventListener("click", () => {
    tl.to(bttn, {
       autoAlpha: 0,    
       onComplete: () => {	
+ bttn.style.pointerEvents = 'none';
         particles.integrate({
           duration: 900,
           easing: "easeOutSine"
         });
+ bttn.style.pointerEvents = 'auto';
 
         gsap.to(bttn, {
           duration: 1,	  
@@ -395,7 +397,6 @@ tl.to(items, {
     tl.to(bttn, {
       autoAlpha: 0,
       onComplete: () => {
-bttn.style.pointerEvents = 'none';
         particles.integrate({
           duration: 900,
           easing: "easeOutSine"
