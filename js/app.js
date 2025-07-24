@@ -85,41 +85,46 @@ async function animateLoader() {
       easing: 'easeInExpo'
     }];
 
-    const it = document.querySelectorAll(".wrapbtnloader");
-    it.forEach((il, pos) => {
-      let bttn = il.querySelector("button.particles-button");
-      if (!bttn) return;
-      let particlesOpts = arrOpts[pos];
-      const particles = new Particles(bttn, particlesOpts);
+    
+const it = document.querySelectorAll(".wrapbtnloader");
+it.forEach((il, pos) => {
+  let bttn = il.querySelector("button.particles-button");
+  if (!bttn) return;
 
-      gsap.to(bttn, {
-        autoAlpha: 0,
-        onComplete: () => {
-          particles.integrate({
-            duration: 900,
-            easing: "easeOutSine"
-          });
-          gsap.to(bttn, {
-            duration: 1,
-bttn.style.pointerEvents = 'auto';
-            onComplete: () => {
-bttn.style.pointerEvents = 'none';
-              bttn.style.opacity = "1";
-              bttn.style.visibility = "visible";
-            }
-          });
-        }
+  bttn.style.pointerEvents = 'none';
+
+  let particlesOpts = arrOpts[pos];
+  const particles = new Particles(bttn, particlesOpts);
+
+  gsap.to(bttn, {
+    autoAlpha: 0,
+    onComplete: () => {
+      particles.integrate({
+        duration: 900,
+        easing: "easeOutSine"
       });
 
       gsap.to(bttn, {
+        duration: 1,
+        opacity: 1,
+        visibility: "visible",
         onComplete: () => {
-          bttn.addEventListener("click", function () {
-            particles.disintegrate();
-            tl.play();
-          });
+          bttn.style.pointerEvents = 'auto';
         }
       });
-    });
+    }
+  });
+
+  bttn.addEventListener("click", function () {
+    if (bttn.style.pointerEvents !== 'auto') return;
+    particles.disintegrate();
+    tl.play();
+  });
+});
+
+          
+
+      
   })();
 }
 
