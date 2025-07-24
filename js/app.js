@@ -359,7 +359,7 @@ bttn.addEventListener("click", () => {
           duration: 900,
           easing: "easeOutSine"
         });
- bttn.style.pointerEvents = 'auto';
+ 
 
         gsap.to(bttn, {
           duration: 1,	  
@@ -367,7 +367,8 @@ bttn.addEventListener("click", () => {
             bttn.style.opacity = "1";
             bttn.style.visibility = "visible";
           }
-        })
+        });
+ bttn.style.pointerEvents = 'auto';
       }
     }, ">1");  
 }); 
