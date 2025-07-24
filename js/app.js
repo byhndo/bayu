@@ -354,7 +354,7 @@ bttn.addEventListener("click", () => {
    tl.to(bttn, {
       autoAlpha: 0,    
       onComplete: () => {	
- bttn.style.pointerEvents = 'auto';
+ bttn.style.pointerEvents = 'none';
         particles.integrate({
           duration: 900,
           easing: "easeOutSine"
@@ -364,7 +364,7 @@ bttn.addEventListener("click", () => {
         gsap.to(bttn, {
           duration: 1,	  
           onComplete: () => {
-bttn.style.pointerEvents = 'none';
+bttn.style.pointerEvents = 'auto';
             bttn.style.opacity = "1";
             bttn.style.visibility = "visible";
           }
@@ -398,7 +398,7 @@ tl.to(items, {
     tl.to(bttn, {
       autoAlpha: 0,
       onComplete: () => {
-bttn.style.pointerEvents = 'auto';
+bttn.style.pointerEvents = 'none';
         particles.integrate({
           duration: 900,
           easing: "easeOutSine"
@@ -407,7 +407,7 @@ bttn.style.pointerEvents = 'auto';
         gsap.to(bttn, {
           duration: 1,
           onComplete: () => {
- bttn.style.pointerEvents = 'none';
+ bttn.style.pointerEvents = 'auto';
             bttn.style.opacity = "1";
             bttn.style.visibility = "visible";
           }
