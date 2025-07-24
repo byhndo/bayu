@@ -84,45 +84,49 @@ async function animateLoader() {
       duration: 1000,
       easing: 'easeInExpo'
     }];
-    
-const it = document.querySelectorAll(".wrapbtnloader");
-it.forEach((il, pos) => {
-  let bttn = il.querySelector("button.particles-button");
-  if (!bttn) return;
+          
+  const it = document.querySelectorAll(".wrapbtnloader");
+    it.forEach((il, pos) => {
+      let bttn = il.querySelector("button.particles-button");
+      if (!bttn) return;
 
-  bttn.style.pointerEvents = 'none';
+      bttn.style.pointerEvents = 'none';
+	    
+      let particlesOpts = arrOpts[pos];
+      const particles = new Particles(bttn, particlesOpts);
 
-  let particlesOpts = arrOpts[pos];
-  const particles = new Particles(bttn, particlesOpts);
-
-  gsap.to(bttn, {
-    autoAlpha:1,
-    onComplete: () => {
-      particles.integrate({
-        duration: 900,
-        easing: "easeOutSine"
+      gsap.to(bttn, {
+        autoAlpha: 0,
+        onComplete: () => {
+          particles.integrate({
+            duration: 900,
+            easing: "easeOutSine"
+          });
+          gsap.to(bttn, {
+            duration: 1,
+            onComplete: () => {
+              bttn.style.opacity = "1";
+              bttn.style.visibility = "visible";
+	      bttn.style.pointerEvents = 'auto
+            }
+          });
+        }
       });
 
       gsap.to(bttn, {
-        duration: 1,
         onComplete: () => {
-	  bttn.style.opacity = "1";
-          bttn.style.visibility = "visible";
-          bttn.style.pointerEvents = 'auto';
-       }
+          bttn.addEventListener("click", function () {
+	   if (bttn.style.pointerEvents !== 'auto') return;
+
+            particles.disintegrate();
+            tl.play();
+          });
+        }
       });
-    }
-  });
-
-  bttn.addEventListener("click", function () {
-    if (bttn.style.pointerEvents !== 'auto') return;
-    particles.disintegrate();
-    tl.play();
-  });
-});      
+    });
   })();
-}
-
+}    
+    
 animateLoader();
 
 gsap.registerPlugin(ScrollTrigger);
