@@ -103,7 +103,7 @@ bttn.style.pointerEvents = 'none';
           gsap.to(bttn, {
             duration: 1,
             onComplete: () => {
-bttn.style.pointerEvents = 'none';
+bttn.style.pointerEvents = 'auto';
               bttn.style.opacity = "1";
               bttn.style.visibility = "visible";
             }
@@ -114,7 +114,7 @@ bttn.style.pointerEvents = 'none';
       gsap.to(bttn, {
         onComplete: () => {
           bttn.addEventListener("click", function () {
- bttn.style.pointerEvents = 'auto';
+ bttn.style.pointerEvents = 'none';
             particles.disintegrate();
             tl.play();
           });
