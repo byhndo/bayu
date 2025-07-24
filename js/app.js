@@ -99,11 +99,11 @@ async function animateLoader() {
             duration: 900,
             easing: "easeOutSine"
           });
-bttn.style.pointerEvents = 'none';
+bttn.style.pointerEvents = 'auto';
           gsap.to(bttn, {
             duration: 1,
             onComplete: () => {
-bttn.style.pointerEvents = 'auto';
+bttn.style.pointerEvents = 'none';
               bttn.style.opacity = "1";
               bttn.style.visibility = "visible";
             }
