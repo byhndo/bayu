@@ -344,7 +344,7 @@ gsap.to('.indicator', {
     let particlesOpts = arrOpts[pos];
     const particles = new Particles(bttn, particlesOpts);
 
-let tl = gsap.timeline()
+let tl = gsap.timeline();
 
 tl.to(items, {
  autoAlpha:1
