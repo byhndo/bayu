@@ -411,6 +411,7 @@ tl.to(items, {
     }, pos + 1.3)  
  
     bttn.addEventListener("click", () => {
+/*event*/   bttn.style.pointerEvents = 'none';
       particles.disintegrate();
     });       
      
