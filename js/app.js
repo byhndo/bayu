@@ -345,10 +345,11 @@ gsap.to('.indicator', {
     const particles = new Particles(bttn, particlesOpts);
 
     let tl = gsap.timeline();
-   bttn.addEventListener("click", () => {
     tl.to(items, {
       autoAlpha: 1
     });
+
+bttn.addEventListener("click", () => {
 
     tl.to(bttn,{
         autoAlpha: 0,
