@@ -375,7 +375,7 @@ tl.to(items, {
 	
     tl.to(bttn, {
       autoAlpha: 0,  
-      onComplete: () => {	
+      onUpdate: () => {	
         particles.integrate({
           duration: 900,
           easing: "easeOutSine"
@@ -383,8 +383,10 @@ tl.to(items, {
 	
         gsap.to(bttn, {
          duration: 1,	        
-         autoAlpha: 1,
-	 opacity:1
+         onComplete: () => {
+              bttn.style.opacity = "1";
+              bttn.style.visibility = "visible";
+	 }
         });
       }
     }, "+=1.5");  
