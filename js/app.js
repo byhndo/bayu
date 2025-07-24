@@ -96,7 +96,7 @@ it.forEach((il, pos) => {
   const particles = new Particles(bttn, particlesOpts);
 
   gsap.to(bttn, {
-    autoAlpha:0,
+    autoAlpha:1,
     onComplete: () => {
       particles.integrate({
         duration: 900,
