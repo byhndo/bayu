@@ -94,7 +94,7 @@ async function animateLoader() {
       const particles = new Particles(bttn, particlesOpts);
 
       gsap.to(bttn, {
-        autoAlpha: 1,
+        autoAlpha: 0,
         onComplete: () => {
           particles.integrate({
             duration: 900,
