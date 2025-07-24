@@ -345,7 +345,7 @@ gsap.to('.indicator', {
     const particles = new Particles(bttn, particlesOpts);
 
     let tl = gsap.timeline();
-  //  bttn.addEventListener("click", () => {
+   bttn.addEventListener("click", () => {
     tl.to(items, {
       autoAlpha: 1
     });
@@ -367,7 +367,7 @@ gsap.to('.indicator', {
           });
         }
       },">1");
-   //   });
+    });
 
 bttn.addEventListener("click", () => {
       tl.to(items, {
