@@ -320,100 +320,100 @@ gsap.to('.indicator', {
 
     
 (function () {
-  const arrOpts = [    
+  const arrOpts = [
     {
       color: "#068FFF",
-      direction: 'right',
+      direction: "right",
       duration: 1000,
-      easing: 'easeInOutCubic'
+      easing: "easeInOutCubic"
     },
+
     {
       color: "#068FFF",
-      direction: 'left',
+      direction: "left",
       duration: 1000,
-      easing: 'easeInOutCubic'
+      easing: "easeInOutCubic"
     }
   ];
 
   const items = document.querySelectorAll(".nav");
 
   items.forEach((el, pos) => {
-
     let bttn = el.querySelector(".particles-button");
-    if (!bttn) return; 
     let particlesOpts = arrOpts[pos];
+
     const particles = new Particles(bttn, particlesOpts);
 
-let tl = gsap.timeline();
+    let tl = gsap.timeline();
+  //  bttn.addEventListener("click", () => {
+    tl.to(items, {
+      autoAlpha: 1
+    });
 
-tl.to(items, {
- autoAlpha:1
-});
-	        
-   tl.to(bttn, {
-      autoAlpha: 0,    
-      onComplete: () => {	
-        particles.integrate({
-          duration: 900,
-          easing: "easeOutSine"
-        });
+    tl.to(bttn,{
+        autoAlpha: 0,
+        onComplete: () => {
+          particles.integrate({
+            duration: 900,
+            easing: "easeOutSine"
+          });
 
-        gsap.to(bttn, {
-          duration: 1,	  
-          onComplete: () => {
-            bttn.style.opacity = "1";
-            bttn.style.visibility = "visible";
-          }
-        })
-      }
-    }, ">1");  
-
-bttn.addEventListener("click", () => {
-tl.to(items, {                
- autoAlpha: 1
-});
-	
-    tl.to(bttn, {
-      autoAlpha: 0,  
-      onUpdate: () => {	
-        particles.integrate({
-          duration: 900,
-          easing: "easeOutSine"
-        });
-	
-        gsap.to(bttn, {
-         duration: 1,	        
-         onComplete: () => {
+          gsap.to(bttn, {
+            duration: 1,
+            onComplete: () => {
               bttn.style.opacity = "1";
               bttn.style.visibility = "visible";
-	 }
-        });
-      }
-    }, "+=1.5");  
-});
-	 
-    tl.to(bttn, {
-      autoAlpha: 0,
-      onComplete: () => {
-        particles.integrate({
-          duration: 900,
-          easing: "easeOutSine"
-        });
+            }
+          });
+        }
+      },">1");
+   //   });
 
-        gsap.to(bttn, {
-          duration: 1,
-          onComplete: () => {
-            bttn.style.opacity = "1";
-            bttn.style.visibility = "visible";
+bttn.addEventListener("click", () => {
+      tl.to(items, {
+        autoAlpha: 1
+      });
+
+      tl.to(bttn,{
+          autoAlpha: 0,
+          onUpdate: () => {
+            particles.integrate({
+              duration: 900,
+              easing: "easeOutSine"
+            });
+
+            gsap.to(bttn, {
+              duration: 1,
+              onComplete: () => {
+              bttn.style.opacity = "1";
+              bttn.style.visibility = "visible";
+            }
+            });
           }
-        })
-      }
-    }, pos + 1.3)  
- 
+        },"+=1.5");
+      });
+
+      tl.to(bttn,{
+        autoAlpha: 0,
+        onComplete: () => {
+          particles.integrate({
+            duration: 900,
+            easing: "easeOutSine"
+          });
+
+          gsap.to(bttn, {
+            duration: 1,
+            onComplete: () => {
+              bttn.style.opacity = "1";
+              bttn.style.visibility = "visible";
+            }
+          });
+        }
+      },pos + 1.3);
+
     bttn.addEventListener("click", () => {
       particles.disintegrate();
-    });       
-     
+    });
   });
 })();
                     
