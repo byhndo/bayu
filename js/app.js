@@ -368,6 +368,7 @@ bttn.addEventListener("click", () => {
             bttn.style.visibility = "visible";
           }
         });
+bttn.style.pointerEvents = 'auto';	      
       }
     }, ">1");  
 }); 
@@ -391,6 +392,7 @@ bttn.style.pointerEvents = 'none';
          autoAlpha: 1,
 	 opacity:1
         });
+ bttn.style.pointerEvents = 'auto';
       }
     }, "+=1.5");  
 });
@@ -415,6 +417,7 @@ bttn.style.pointerEvents = 'none';
     }, pos + 1.3)  
  
     bttn.addEventListener("click", () => {
+bttn.style.pointerEvents = 'auto';
       particles.disintegrate();
     });       
      
