@@ -368,7 +368,6 @@ bttn.addEventListener("click", () => {
             bttn.style.visibility = "visible";
           }
         });
- bttn.style.pointerEvents = 'auto';
       }
     }, ">1");  
 }); 
@@ -380,7 +379,8 @@ tl.to(items, {
 	
     tl.to(bttn, {
       autoAlpha: 0,  
-      onUpdate: () => {	
+      onUpdate: () => {
+bttn.style.pointerEvents = 'none';
         particles.integrate({
           duration: 900,
           easing: "easeOutSine"
@@ -398,6 +398,7 @@ tl.to(items, {
     tl.to(bttn, {
       autoAlpha: 0,
       onComplete: () => {
+bttn.style.pointerEvents = 'none';
         particles.integrate({
           duration: 900,
           easing: "easeOutSine"
