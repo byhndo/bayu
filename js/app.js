@@ -95,14 +95,15 @@ async function animateLoader() {
       gsap.to(bttn, {
         autoAlpha: 0,
         onComplete: () => {
+bttn.style.pointerEvents = 'auto';
           particles.integrate({
             duration: 900,
             easing: "easeOutSine"
           });
-bttn.style.pointerEvents = 'auto';
           gsap.to(bttn, {
             duration: 1,
             onComplete: () => {
+bttn.style.pointerEvents = 'none';
               bttn.style.opacity = "1";
               bttn.style.visibility = "visible";
             }
