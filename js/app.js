@@ -378,7 +378,6 @@ tl.to(items, {
     tl.to(bttn, {
       autoAlpha: 0,  
       onUpdate: () => {	
-bttn.style.pointerEvents = 'none';
         particles.integrate({
           duration: 900,
           easing: "easeOutSine"
@@ -396,6 +395,7 @@ bttn.style.pointerEvents = 'none';
     tl.to(bttn, {
       autoAlpha: 0,
       onComplete: () => {
+bttn.style.pointerEvents = 'none';
         particles.integrate({
           duration: 900,
           easing: "easeOutSine"
