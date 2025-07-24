@@ -95,6 +95,7 @@ async function animateLoader() {
       gsap.to(bttn, {
         autoAlpha: 0,
         onComplete: () => {
+bttn.style.pointerEvents = 'none';
           particles.integrate({
             duration: 900,
             easing: "easeOutSine"
@@ -102,6 +103,7 @@ async function animateLoader() {
           gsap.to(bttn, {
             duration: 1,
             onComplete: () => {
+bttn.style.pointerEvents = 'auto';
               bttn.style.opacity = "1";
               bttn.style.visibility = "visible";
             }
@@ -113,7 +115,7 @@ async function animateLoader() {
         onComplete: () => {
           bttn.addEventListener("click", function () {
             particles.disintegrate();
-            tl.play();
+            tl.restart();
           });
         }
       });
@@ -403,7 +405,6 @@ tl.to(items, {
         gsap.to(bttn, {
           duration: 1,
           onComplete: () => {
-bttn.style.pointerEvents = 'none';
             bttn.style.opacity = "1";
             bttn.style.visibility = "visible";
           }
