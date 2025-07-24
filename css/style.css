@@ -590,7 +590,7 @@ p.sub2 {
 }
 
 .grid {
- columns: 3;
+ columns: 2;
  column-fill: balance; 
  column-gap: 3.5vw;
  box-sizing: border-box;
