@@ -84,7 +84,6 @@ async function animateLoader() {
       duration: 1000,
       easing: 'easeInExpo'
     }];
-
     
 const it = document.querySelectorAll(".wrapbtnloader");
 it.forEach((il, pos) => {
@@ -92,7 +91,6 @@ it.forEach((il, pos) => {
   if (!bttn) return;
 
   bttn.style.pointerEvents = 'none';
-  bttn.style.visibility = visible; 
 
   let particlesOpts = arrOpts[pos];
   const particles = new Particles(bttn, particlesOpts);
@@ -120,11 +118,7 @@ it.forEach((il, pos) => {
     particles.disintegrate();
     tl.play();
   });
-});
-
-          
-
-      
+});      
   })();
 }
 
