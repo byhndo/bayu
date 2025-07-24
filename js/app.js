@@ -84,12 +84,11 @@ async function animateLoader() {
       duration: 1000,
       easing: 'easeInExpo'
     }];
-          
-  const it = document.querySelectorAll(".wrapbtnloader");
+
+    const it = document.querySelectorAll(".wrapbtnloader");
     it.forEach((il, pos) => {
       let bttn = il.querySelector("button.particles-button");
       if (!bttn) return;
-
       let particlesOpts = arrOpts[pos];
       const particles = new Particles(bttn, particlesOpts);
 
@@ -112,7 +111,7 @@ async function animateLoader() {
 
       gsap.to(bttn, {
         onComplete: () => {
-          bttn.addEventListener("click", function () {	   
+          bttn.addEventListener("click", function () {
             particles.disintegrate();
             tl.play();
           });
@@ -120,8 +119,8 @@ async function animateLoader() {
       });
     });
   })();
-}    
-    
+}
+
 animateLoader();
 
 gsap.registerPlugin(ScrollTrigger);
@@ -359,14 +358,14 @@ bttn.addEventListener("click", () => {
           duration: 900,
           easing: "easeOutSine"
         });
-	      
+
         gsap.to(bttn, {
           duration: 1,	  
           onComplete: () => {
             bttn.style.opacity = "1";
             bttn.style.visibility = "visible";
           }
-        });	      
+        })
       }
     }, ">1");  
 }); 
@@ -378,7 +377,7 @@ tl.to(items, {
 	
     tl.to(bttn, {
       autoAlpha: 0,  
-      onUpdate: () => {
+      onUpdate: () => {	
         particles.integrate({
           duration: 900,
           easing: "easeOutSine"
@@ -399,7 +398,7 @@ tl.to(items, {
         particles.integrate({
           duration: 900,
           easing: "easeOutSine"
-        }); 
+        });
 
         gsap.to(bttn, {
           duration: 1,
