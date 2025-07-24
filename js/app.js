@@ -90,8 +90,6 @@ async function animateLoader() {
       let bttn = il.querySelector("button.particles-button");
       if (!bttn) return;
 
-      bttn.style.pointerEvents = 'none';
-	    
       let particlesOpts = arrOpts[pos];
       const particles = new Particles(bttn, particlesOpts);
 
@@ -107,7 +105,6 @@ async function animateLoader() {
             onComplete: () => {
               bttn.style.opacity = "1";
               bttn.style.visibility = "visible";
-	      bttn.style.pointerEvents = 'auto
             }
           });
         }
@@ -115,9 +112,7 @@ async function animateLoader() {
 
       gsap.to(bttn, {
         onComplete: () => {
-          bttn.addEventListener("click", function () {
-	   if (bttn.style.pointerEvents !== 'auto') return;
-
+          bttn.addEventListener("click", function () {	   
             particles.disintegrate();
             tl.play();
           });
