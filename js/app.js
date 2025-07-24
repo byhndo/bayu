@@ -395,10 +395,10 @@ tl.to(items, {
     tl.to(bttn, {
       autoAlpha: 0,
       onComplete: () => {
-        particles.integrate({
+     /*   particles.integrate({
           duration: 900,
           easing: "easeOutSine"
-        });
+        }); */
 
         gsap.to(bttn, {
           duration: 1,
