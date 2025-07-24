@@ -106,11 +106,10 @@ it.forEach((il, pos) => {
 
       gsap.to(bttn, {
         duration: 1,
+	autoAlpha:1,
         onComplete: () => {
           bttn.style.pointerEvents = 'auto';
-	  bttn.style.opacity = "1";
-          bttn.style.visibility = "visible";
-        }
+       }
       });
     }
   });
