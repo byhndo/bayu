@@ -378,6 +378,7 @@ tl.to(items, {
     tl.to(bttn, {
       autoAlpha: 0,  
       onUpdate: () => {	
+bttn.style.pointerEvents = 'none';
         particles.integrate({
           duration: 900,
           easing: "easeOutSine"
@@ -411,7 +412,6 @@ tl.to(items, {
     }, pos + 1.3)  
  
     bttn.addEventListener("click", () => {
-/*event*/   bttn.style.pointerEvents = 'none';
       particles.disintegrate();
     });       
      
