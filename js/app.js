@@ -375,7 +375,7 @@ tl.to(items, {
 	
     tl.to(bttn, {
       autoAlpha: 0,  
-      onUpdate: () => {	
+      onComplete: () => {	
         particles.integrate({
           duration: 900,
           easing: "easeOutSine"
