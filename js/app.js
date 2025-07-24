@@ -92,12 +92,13 @@ it.forEach((il, pos) => {
   if (!bttn) return;
 
   bttn.style.pointerEvents = 'none';
-  bttn.style.opacity = 0; 
+  bttn.style.visibility = visible; 
 
   let particlesOpts = arrOpts[pos];
   const particles = new Particles(bttn, particlesOpts);
 
   gsap.to(bttn, {
+    autoAlpha:0,
     onComplete: () => {
       particles.integrate({
         duration: 900,
