@@ -370,11 +370,11 @@ bttn.addEventListener("click", () => {
       },">1");
     }); */
 
-bttn.addEventListener("click", () => {
-      tl.to(items, {
-        autoAlpha: 1
-      });
+tl.to(items, {
+  autoAlpha: 1
+});
 
+bttn.addEventListener("click", () => {
       tl.to(bttn,{
           autoAlpha: 0,
           onUpdate: () => {
