@@ -1,10 +1,10 @@
 const link = document.createElement('link');
 link.rel = 'stylesheet';
-link.href = 'css/404.css'; 
+link.href = '/css/404.css'; 
 document.head.appendChild(link);
 
 const script = document.createElement('script');
-script.src = 'js/404.js';
+script.src = '/js/404.js';
 script.defer = true;
 document.head.appendChild(script);
 
