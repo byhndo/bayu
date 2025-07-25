@@ -1,6 +1,6 @@
 const link = document.createElement('link');
 link.rel = 'stylesheet';
-link.href = 'css/notfound.css'; 
+link.href = 'css/404.css'; 
 document.head.appendChild(link);
 
 const script = document.createElement('script');
