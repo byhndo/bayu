@@ -431,7 +431,12 @@ bttn.addEventListener("click", () => {
               bttn.style.pointerEvents = "none"; 
               gsap.to(bttn, {
                 onComplete: () => {
+                  bttn.style.pointerEvents = "none"; 
+		  gsap.to(bttn, {
+                  onComplete: () => {
                   bttn.style.pointerEvents = "auto"; 
+                 }
+                });
                 }
               });
             }
