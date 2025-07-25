@@ -104,6 +104,17 @@ async function animateLoader() {
             onComplete: () => {
               bttn.style.opacity = "1";
               bttn.style.visibility = "visible";
+	      bttn.style.pointerEvents = "none";
+	      gsap.to(bttn, {
+                onComplete: () => {
+                  bttn.style.pointerEvents = "none"; 
+                  gsap.to(bttn, {
+                  onComplete: () => {
+                  bttn.style.pointerEvents = "auto"; 
+                  }
+                 });
+                }
+              }); 
             }
           });
         }
