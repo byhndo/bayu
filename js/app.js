@@ -317,7 +317,6 @@ gsap.to('.indicator', {
  });
 }
 }, "<");
-
     
 (function () {
   const arrOpts = [
@@ -339,18 +338,13 @@ gsap.to('.indicator', {
   const items = document.querySelectorAll(".nav");
 
   items.forEach((el, pos) => {
-    let bttn = el.querySelector(".particles-button");
+    let bttn = el.querySelector(".particles-button");    
+    bttn.style.pointerEvents = "none";    
     let particlesOpts = arrOpts[pos];
-
     const particles = new Particles(bttn, particlesOpts);
-
-let tl = gsap.timeline();
-tl.to(items, {
-  autoAlpha: 1
-});
-
-bttn.addEventListener("click", () => {
-
+    let tl = gsap.timeline();
+tl.to(items, {autoAlpha: 1});     
+  bttn.addEventListener("click", () => {    
     tl.to(bttn,{
         autoAlpha: 0,
         onComplete: () => {
@@ -358,22 +352,30 @@ bttn.addEventListener("click", () => {
             duration: 900,
             easing: "easeOutSine"
           });
-
-          gsap.to(bttn, {
+           gsap.to(bttn, {
             duration: 1,
             onComplete: () => {
               bttn.style.opacity = "1";
               bttn.style.visibility = "visible";
+              
+              gsap.to(bttn, {
+                onComplete: () => {
+                  bttn.style.pointerEvents = "none";
+                  gsap.to(bttn, {
+                  onComplete: () => {
+                  bttn.style.pointerEvents = "auto"; 
+                }
+              });
+                }
+              });
             }
           });
         }
       },">1");
-    }); 
+     }); 
 
-bttn.addEventListener("click", () => {
-tl.to(items, {
-  autoAlpha: 1
-});
+bttn.addEventListener("click", () => {      
+      tl.to(items, {autoAlpha: 1});
       tl.to(bttn,{
           autoAlpha: 0,
           onUpdate: () => {
@@ -381,17 +383,27 @@ tl.to(items, {
               duration: 900,
               easing: "easeOutSine"
             });
-
             gsap.to(bttn, {
               duration: 1,
               onComplete: () => {
               bttn.style.opacity = "1";
               bttn.style.visibility = "visible";
+                bttn.style.pointerEvents = "none"; 
+                gsap.to(bttn, {
+                onComplete: () => {
+                  bttn.style.pointerEvents = "none"; 
+                  gsap.to(bttn, {
+                  onComplete: () => {
+                  bttn.style.pointerEvents = "auto"; 
+                }
+              });
+                }
+              }); 
             }
             });
           }
         },"+=1.5");
-      });
+      }); 
 
       tl.to(bttn,{
         autoAlpha: 0,
@@ -400,19 +412,24 @@ tl.to(items, {
             duration: 900,
             easing: "easeOutSine"
           });
-
           gsap.to(bttn, {
             duration: 1,
             onComplete: () => {
               bttn.style.opacity = "1";
               bttn.style.visibility = "visible";
+              bttn.style.pointerEvents = "none"; 
+              gsap.to(bttn, {
+                onComplete: () => {
+                  bttn.style.pointerEvents = "auto"; 
+                }
+              });
             }
           });
         }
       },pos + 1.3);
-
-    bttn.addEventListener("click", () => {
-      particles.disintegrate();
+    
+    bttn.addEventListener("click", () => {      
+      particles.disintegrate();               
     });
   });
 })();
