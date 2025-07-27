@@ -101,9 +101,7 @@ Koleksi beberapa foto momen berharga, setidaknya untuk saya, yang berhasil saya 
 	
 <!-- footer -->
 <div class="box4">                          
-<div class="footer"><span>&copy; <span id="year2"></span>Dibuat oleh <a href="/">Bayu Handono</a> All right reserved.</span>
-<script>const currentYear2 = new Date().getFullYear();
-document.getElementById("year2").textContent = currentYear2</script>
+<div class="footer"><span>&copy; <span id="year2"></span><a href="/">Bayu Handono</a> All right reserved.</span>
 </div>
 </div>
 <!-- footer -->
@@ -111,5 +109,11 @@ document.getElementById("year2").textContent = currentYear2</script>
 </div>
 <!-- sub2 -->
     
-  </div> `
+  </div> `,
+
+mounted() {
+const currentYear = new Date().getFullYear();
+document.getElementById("year").textContent = currentYear
+}
+	
 };
