@@ -101,7 +101,7 @@ Koleksi beberapa foto momen berharga, setidaknya untuk saya, yang berhasil saya 
 	
 <!-- footer -->
 <div class="box4">                          
-<div class="footer"><span>&copy;<span id="year2"></span><a href="/"> Bayu Handono</a> All right reserved.</span>
+<div class="footer"><span>&copy;<a href="/"> Bayu Handono</a> All right reserved.</span>
 </div>
 </div>
 <!-- footer -->
@@ -110,10 +110,5 @@ Koleksi beberapa foto momen berharga, setidaknya untuk saya, yang berhasil saya 
 <!-- sub2 -->
     
   </div> `,
-
-mounted() {
-const currentYear = new Date().getFullYear();
-document.getElementById("year").textContent = currentYear
-}
 	
 };
