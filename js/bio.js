@@ -130,7 +130,7 @@ tidak tahu apa-apa.&rdquo;
 	
 <!-- footer -->
 <div class="box4">                           
-<div class="footer"><span>&copy; <span id="year"></span>Dibuat oleh <a href="/">Bayu Handono.</a> All right reserved.</span>
+<div class="footer"><span>&copy; <span id="year"></span><a href="/">Bayu Handono.</a> All right reserved.</span>
 </div>
 </div>
 <!-- footer -->
