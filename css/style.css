@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&display=block');
 
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&family=VT323&display=block');
+
 @font-face{
  font-family:Anton;
  font-weight:400;
@@ -84,7 +86,7 @@
  --sizebody: 11.5px;
  --sizetitle:17vw;
  --sizenav:9.5px;
- --font1: 'Anton', sans-serif;	
+ --font1: "Rubik Glitch", "VT323", 'Anton', sans-serif;	
  --font2: 'Inter', sans-serif;
  --font3: 'Bruno Ace', sans-serif;	
  --marginp: 6rem;
