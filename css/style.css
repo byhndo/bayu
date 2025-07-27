@@ -356,7 +356,7 @@ h5 {
  --color-item-bg: transparent;
  --color-button-bg: var(--darkgrey);
  --color-button-text: var(--light);     
- --button-padding: .45rem 2.6rem .33rem;
+ --button-padding: .45rem 2.5rem .35rem;
  --button-margin: 0;
  --radius-button: 40px;
  --border-button: 0;
