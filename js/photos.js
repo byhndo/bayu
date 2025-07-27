@@ -101,7 +101,7 @@ Koleksi beberapa foto momen berharga, setidaknya untuk saya, yang berhasil saya 
 	
 <!-- footer -->
 <div class="box4">                          
-<div class="footer"><span>&copy; <span id="year2"></span><a href="/">Bayu Handono</a> All right reserved.</span>
+<div class="footer"><span>&copy;<span id="year2"></span><a href="/"> Bayu Handono</a> All right reserved.</span>
 </div>
 </div>
 <!-- footer -->
