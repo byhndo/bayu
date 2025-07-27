@@ -111,11 +111,9 @@ Koleksi beberapa foto momen berharga, setidaknya untuk saya, yang berhasil saya 
     
   </div> `,
 
-setup() {
 mounted() {
 const currentYear = new Date().getFullYear();
 document.getElementById("year").textContent = currentYear
-}
 }
 	
 };
