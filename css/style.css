@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&display=block');
 
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&family=VT323&display=block');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=block');
 
 @font-face{
  font-family:Anton;
@@ -216,7 +216,7 @@ html.lenis, html.lenis body {
 .percentage {
  color: var(--textloadercolor);
  font-size: 8px;
- font-family: var(--font2);
+ font-family: var(--font3);
  font-weight:400;
  z-index:2000; 
  top:-52%;
