@@ -1,5 +1,3 @@
-const { onMounted } = Vue;
-
 const Photos = {
   template: `
   <div> 
@@ -113,11 +111,9 @@ Koleksi beberapa foto momen berharga, setidaknya untuk saya, yang berhasil saya 
     
   </div> `,
 
-setup() {
-onMounted(() => {
+mounted() {
 const currentYear = new Date().getFullYear();
 document.getElementById("year").textContent = currentYear
-});
 }
 	
 };
