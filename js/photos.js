@@ -1,3 +1,5 @@
+const { onMounted } = Vue;
+
 const Photos = {
   template: `
   <div> 
