@@ -1,5 +1,3 @@
-const { onMounted } = Vue;
-
 const Bio = {
   template: `
   <div> 
@@ -143,11 +141,9 @@ tidak tahu apa-apa.&rdquo;
     
   </div> `,
 
-setup() {
-onMounted(() => {
+mounted() {
 const currentYear = new Date().getFullYear();
 document.getElementById("year").textContent = currentYear
-});
 }
 	
 };
