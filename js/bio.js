@@ -141,11 +141,9 @@ tidak tahu apa-apa.&rdquo;
     
   </div> `,
 
-setup() {
 mounted() {
 const currentYear = new Date().getFullYear();
 document.getElementById("year").textContent = currentYear
-}
 }
 	
 };
