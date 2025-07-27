@@ -4,7 +4,7 @@
  font-family:Anton;
  font-weight:400;
  font-style:normal;
- src: local('Anton'), url(../fonts/Anton-Regular.woff) format('woff');
+ src: local('Anton'), url(../fonts/Anton-Regular.woff2) format('woff2');
  font-display: block;
 }
 
