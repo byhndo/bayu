@@ -1,8 +1,8 @@
 const routes = [
-  { path: '/', redirect: '/bio' },
+//  { path: '/', redirect: '/bio' },
   { name: "Bio", path: "/bio", component: Bio },
   { name: "Photos", path: "/photos", component: Photos },
-  { path: '/:pathMatch(.*)*', redirect: '/bio' } 
+//  { path: '/:pathMatch(.*)*', redirect: '/bio' } 
 ];
 
 const router = VueRouter.createRouter({
