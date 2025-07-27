@@ -234,8 +234,6 @@ const app = createApp({
     watch(
   () => route.path,
   (newPath) => {
-    if (firstLoad.value || route.matched.length === 0) return; 
-
     if (newPath === '/bio') {
       bg.value = 'bio';
     } else if (newPath === '/photos') {
