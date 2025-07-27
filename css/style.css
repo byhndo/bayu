@@ -88,7 +88,7 @@
  --font2: 'Inter', sans-serif;
  --font3: "VT323", sans-serif;	
  --marginp: 6rem;
- --fwbtn: 600;
+ --fwbtn: 500;
  --fwnav: 400;
  --fwtitle: 400;
  --fwhh: 400;
@@ -288,7 +288,7 @@ html.lenis, html.lenis body {
  --color-item-bg: transparent;
  --color-button-bg: var(--textloadercolor);
  --color-button-text: var(--bgloaderscreen);
- --button-padding: 1rem 3rem .9rem;
+ --button-padding: 1rem 3rem .8rem;
  --button-margin: 0;
  --radius-button: 40px;
  --border-button: 0;
@@ -401,7 +401,7 @@ h1 {
  font-size:11px;
  font-family: var(--font2);
  color: var(--soc1);
- font-weight:500;
+ font-weight:400;
  transition: color 4s;
  text-align:center;
  opacity:0;
