@@ -215,7 +215,7 @@ html.lenis, html.lenis body {
 
 .percentage {
  color: var(--textloadercolor);
- font-size: 11px;
+ font-size: 12px;
  font-family: var(--font3);
  font-weight:400;
  z-index:2000; 
