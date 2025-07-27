@@ -582,7 +582,7 @@ p.sub2 {
 .b-text{
  font-size:180%;
  text-transform:uppercase;
- font-family:var(--font1);
+ font-family:var(--font3);
  color:var(--dark);
  font-weight:400;
  text-align:center;
