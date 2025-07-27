@@ -131,8 +131,6 @@ tidak tahu apa-apa.&rdquo;
 <!-- footer -->
 <div class="box4">                           
 <div class="footer"><span>&copy; <span id="year"></span>Dibuat oleh <a href="/">Bayu Handono.</a> All right reserved.</span>
-<script>const currentYear = new Date().getFullYear();
-document.getElementById("year").textContent = currentYear</script>
 </div>
 </div>
 <!-- footer -->
@@ -140,10 +138,12 @@ document.getElementById("year").textContent = currentYear</script>
 </div>
 <!-- sub1 -->
 
-
-
-
-
     
-  </div> `
+  </div> `,
+
+mounted() {
+const currentYear = new Date().getFullYear();
+document.getElementById("year").textContent = currentYear
+}
+	
 };
