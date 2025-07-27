@@ -74,7 +74,8 @@
 
 :root {  
  --light: #e6e7eb;
- --dark: #181b1e;
+// --dark: #181b1e;
+ --dark: #1d1d1d;
  --grey: #BBBFCA;
  --darkgrey: #495057; 
  --soc1: #393E46;
