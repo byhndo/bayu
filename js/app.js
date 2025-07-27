@@ -214,37 +214,42 @@ const app = createApp({
     animePath(bg.value);      
     };
 
-    onMounted(() => {	    
-      if (route.path !== '/bio') {
-        router.replace('/bio');
-        bg.value = 'bio';
-      }
+    onMounted(() => {
+      if (route.matched.length === 0) {
+        return;
+    }
+
+      if (route.path !== '/bio' && route.path !== '/photos') {
+        return;
+    }
+
+      bg.value = route.path.replace('/', ''); // bio → 'bio', photos → 'photos'
+
       nextTick(() => {
         triggerAnimation();
         firstLoad.value = false;
       });
-    });
+   });
 
     watch(
-      () => route.path,
-      (newPath) => {
-        if (firstLoad.value) return;
+  () => route.path,
+  (newPath) => {
+    if (firstLoad.value || route.matched.length === 0) return; 
 
-        if (newPath === '/bio') {
-          bg.value = 'bio';
-        } else if (newPath === '/photos') {
-          bg.value = 'photos';
-        }
+    if (newPath === '/bio') {
+      bg.value = 'bio';
+    } else if (newPath === '/photos') {
+      bg.value = 'photos';
+    }
 
-	nextTick(() => {
-        requestAnimationFrame(() => {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        triggerAnimation();
-        });
-       }
-    );
+    nextTick(() => {
+      requestAnimationFrame(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+      triggerAnimation();
+    });
+  }
+);
 
     return {
       bg,
