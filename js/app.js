@@ -268,7 +268,7 @@ let primitiveValues = { stdDeviation: 0, scale: 0 };
 
 const titletl = gsap.timeline({
     defaults: {
-      duration: 1.7,
+      duration: 2,
       ease: "expo.out"
     },
 
@@ -285,7 +285,7 @@ const titletl = gsap.timeline({
   }, 0)
 
   .to(title, { 
-    duration: 1.7,
+    duration: 2,
     startAt: {
       autoAlpha:0,
       opacity: 0,  
