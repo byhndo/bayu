@@ -268,8 +268,8 @@ let primitiveValues = { stdDeviation: 0, scale: 0 };
 
 const titletl = gsap.timeline({
     defaults: {
-      duration: 2,
-      ease: "quart.out"
+      duration: 1.7,
+      ease: "expo.out"
     },
 
     onUpdate: () => {
@@ -278,23 +278,23 @@ const titletl = gsap.timeline({
     }
   })
 
-  .to(primitiveValues, {
-      startAt: { stdDeviation: 10, scale: 280 },
-      stdDeviation: 0,
-      scale: 0}, 0)
-  .to(title, {
-      duration: 2,
-      startAt: {
-        opacity: 0,
-        autoAlpha: 0,
-        scale: 0.8,
-        yPercent: 20
-      },
-      opacity: 1,
-      autoAlpha: 1,
-      scale: 1,
-      yPercent : 0
-    }, 0);
+ .to(primitiveValues, { 
+    startAt: { stdDeviation: 20, scale: 300 },  
+    stdDeviation: 0,  
+    scale: 0 
+  }, 0)
+
+  .to(title, { 
+    duration: 1.7,
+    startAt: {
+      autoAlpha:0,
+      opacity: 0,  
+      scale: 0.8
+    },
+    autoAlpha: 1,
+    opacity: 1,  
+    scale: 1 
+  }, 0);
 	  
 gsap.to(".sub-title", {     
  autoAlpha:1,
