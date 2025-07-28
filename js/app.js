@@ -289,11 +289,13 @@ const titletl = gsap.timeline({
     startAt: {
       autoAlpha:0,
       opacity: 0,  
-      scale: 0.8
+      scale: 0.8,
+      yPercent: -10
     },
-    autoAlpha: 1,
-    opacity: 1,  
-    scale: 1 
+      autoAlpha: 1,
+      opacity: 1,  
+      scale: 1,
+      yPercent: 0
   }, 0);
 	  
 gsap.to(".sub-title", {     
