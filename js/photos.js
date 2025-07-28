@@ -101,7 +101,7 @@ Koleksi beberapa foto momen berharga, setidaknya untuk saya, yang berhasil saya 
 	
 <!-- footer -->
 <div class="box4">                          
-<div class="footer"><span>&copy;<a href="/"> Bayu Handono.</a> All right reserved.</span>
+<div class="footer"><span>&copy;<span>{{ currentYear }}</span> <a href="/"> Bayu Handono.</a> All right reserved.</span>
 </div>
 </div>
 <!-- footer -->
@@ -110,5 +110,10 @@ Koleksi beberapa foto momen berharga, setidaknya untuk saya, yang berhasil saya 
 <!-- sub2 -->
     
   </div> `,
-	
+
+setup() {
+    const currentYear = Vue.ref(new Date().getFullYear());
+    return { currentYear };
+}
+		
 };
