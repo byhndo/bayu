@@ -297,7 +297,7 @@ const titletl = gsap.timeline({
 	  
 const subtitle = document.querySelector(".sub-title");
 const feBlursub = document.querySelector(`#noisesubtitle feGaussianBlur`);
-const feDisplacementMap = document.querySelector(`#noisesubtitle feDisplacementMap`);
+const feDisplacementMapsub = document.querySelector(`#noisesubtitle feDisplacementMap`);
 
 let primitiveValues = { stdDeviation: 0, scale: 0 };
 
@@ -309,7 +309,7 @@ const subtitletl = gsap.timeline({
 
     onUpdate: () => {
       feBlursub.setAttribute("stdDeviation", primitiveValues.stdDeviation);
-      feDisplacementMap.setAttribute("scale", primitiveValues.scale);
+      feDisplacementMapsub.setAttribute("scale", primitiveValues.scale);
     }
   })
 	
