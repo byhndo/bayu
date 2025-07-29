@@ -26,12 +26,13 @@ tl.to(primitiveValues, {
 
 .to(".box", {
     startAt: {
+      autoAlpha: 0,
       opacity: 0,  
       scale: .6     
     },
-    opacity: 1,  
-    autoAlpha:1,
-    scale: 1 
+      autoAlpha:1,
+      opacity: 1,  
+      scale: 1 
   }, 0)
 });
 
