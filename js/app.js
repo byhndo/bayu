@@ -269,7 +269,7 @@ let primitiveValues = { stdDeviation: 0, scale: 0 };
 const titletl = gsap.timeline({
     defaults: {
       duration: 2,
-      ease: "expo.out"
+      ease: "quint.out"
     },
 
     onUpdate: () => {
@@ -277,25 +277,22 @@ const titletl = gsap.timeline({
       feDisplacementMap.setAttribute("scale", primitiveValues.scale);
     }
   })
-
- .to(primitiveValues, { 
-    startAt: { stdDeviation: 20, scale: 350 },  
+	
+   .to(primitiveValues, { 
+    startAt: { stdDeviation: 20, scale: 150 },  
     stdDeviation: 0,  
-    scale: 0 
+    scale: 0  
   }, 0)
 
   .to(title, { 
-    duration: 2,
     startAt: {
-      autoAlpha:0,
+      autoAlpha: 0,
       opacity: 0,  
-      scale: 0.8,
-      yPercent: -10
+      scale: 0.9  
     },
-      autoAlpha: 1,
-      opacity: 1,  
-      scale: 1,
-      yPercent: 0
+    autoAlpha: 1,
+    opacity: 1,  
+    scale: 1  
   }, 0);
 	  
 gsap.to(".sub-title", {     
