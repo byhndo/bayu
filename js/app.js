@@ -294,7 +294,6 @@ const titletl = gsap.timeline({
       autoAlpha:1,
       scale: 1 
   }, 0)
-});
 	  
 gsap.to(".sub-title", {     
  autoAlpha:1,
