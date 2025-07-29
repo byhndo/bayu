@@ -334,6 +334,7 @@ h1 {
  text-align:center;
  opacity:0;
  visibility:hidden;
+ filter: url(#noisesubtitle);
 }
 
 .photos .sub-title{
