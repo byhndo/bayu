@@ -486,7 +486,7 @@ gsap.to('.header', {
    y: "5dvh",
    ease: "cubic.out",
    scrollTrigger: {
-    scrub: 3,
+    scrub: 3.5,
     trigger: '.header',
     start: 'top top'
   }
