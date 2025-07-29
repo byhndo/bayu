@@ -483,7 +483,7 @@ bttn.addEventListener("click", () => {
 gsap.to('.header', {  
  onComplete: () => {
   gsap.to(".header", {  
-   y: "0dvh",
+   y: "5dvh",
    ease: "cubic.out",
    scrollTrigger: {
     scrub: 3,
