@@ -295,9 +295,40 @@ const titletl = gsap.timeline({
       scale: 1  
 }, 0);    
 	  
-gsap.to(".sub-title", {     
- autoAlpha:1,
-});
+const subtitle = document.querySelector(".sub-title");
+const feBlur = document.querySelector(`#noisesubtitle feGaussianBlur`);
+const feDisplacementMap = document.querySelector(`#noisesubtitle feDisplacementMap`);
+
+let primitiveValues = { stdDeviation: 0, scale: 0 };
+
+const subtitletl = gsap.timeline({
+    defaults: {
+      duration: 2,
+      ease: "quint.out"
+    },
+
+    onUpdate: () => {
+      feBlur.setAttribute("stdDeviation", primitiveValues.stdDeviation);
+      feDisplacementMap.setAttribute("scale", primitiveValues.scale);
+    }
+  })
+	
+.to(primitiveValues, { 
+    startAt: { stdDeviation: 20, scale: 100 },  
+    stdDeviation: 0,  
+    scale: 0  
+  }, 0)
+
+.to(subtitle, { 
+    startAt: {
+      autoAlpha:0,
+      opacity: 0,  
+      scale: 0.9  
+    },
+      autoAlpha:1,
+      opacity: 1,  
+      scale: 1  
+}, 0);    
 	
 gsap.set('.indicator', {
  y:-100	
