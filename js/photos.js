@@ -6,7 +6,7 @@ const Photos = {
 <!-- sub2 -->
 <div class="sub2">
 <div class="box1">
-<svg class="sub">
+<svg class="hidden">
 <defs>
 <filter id='noiseone'>
 <feGaussianBlur in="SourceGraphic" stdDeviation="0" result="blur"></feGaussianBlur>
