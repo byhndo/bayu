@@ -327,7 +327,11 @@ h1 {
  text-align:center;
  opacity:0;
  visibility:hidden;
- filter: url(#noisesubtitle);
+}
+
+.sub-title span, .photos .sub-title span{
+  visibility:hidden;
+  opacity:0
 }
 
 .photos .sub-title{
