@@ -279,7 +279,7 @@ const titletl = gsap.timeline({
   })
 	
 .to(primitiveValues, { 
-    startAt: { stdDeviation: 40, scale: 80 },  
+    startAt: { stdDeviation: 70, scale: 200 },  
     stdDeviation: 0,  
     scale: 0  
   }, 0)
@@ -287,12 +287,10 @@ const titletl = gsap.timeline({
 .to(title, { 
     startAt: {
       autoAlpha:0,
-      opacity: 0,  
-      scale: 0.7  
+      opacity: 0  
     },
       autoAlpha:1,
-      opacity: 1,  
-      scale: 1  
+      opacity: 1
 }, 0);    
 	  
 const subtitle = document.querySelector(".sub-title");
