@@ -314,7 +314,7 @@ const subtitletl = gsap.timeline({
   })
 	
 .to(primitiveValuessub, { 
-    startAt: { stdDeviation: 10, scale: 100 },  
+    startAt: { stdDeviation: 30, scale: 200 },  
     stdDeviation: 0,  
     scale: 0  
   }, 0)
@@ -656,7 +656,7 @@ const tl = gsap.timeline({
     
   scrollTrigger: {
       trigger: box1, 
-     toggleActions: "play none none reset"
+     toggleActions: once
     }, delay:delaytl
   });
 
@@ -726,7 +726,7 @@ const tl = gsap.timeline({
     
   scrollTrigger: {
       trigger: rbox, 
-     toggleActions: "play none none reset"
+     toggleActions: once
     }, delay:delaytl
   });
 
