@@ -293,40 +293,20 @@ const titletl = gsap.timeline({
       opacity: 1
 }, 0);    
 	  
-const subtitle = document.querySelector(".sub-title");
-const feBlursub = document.querySelector(`#noisesubtitle feGaussianBlur`);
-const feDisplacementMapsub = document.querySelector(`#noisesubtitle feDisplacementMap`);
-
-let primitiveValuessub = { stdDeviation: 0, scale: 0 };
-
-const subtitletl = gsap.timeline({
-    defaults: {
-      duration: 2.3,
-      ease: "quart.out"
-    },
-
-    onUpdate: () => {
-      feBlursub.setAttribute("stdDeviation", primitiveValues.stdDeviation);
-      feDisplacementMapsub.setAttribute("scale", primitiveValues.scale);
-    }
-  })
-	
-.to(primitiveValuessub, { 
-    startAt: { stdDeviation: 40, scale: 150 },  
-    stdDeviation: 0,  
-    scale: 0  
-  }, 0)
-
-.to(subtitle, { 
-    startAt: {
-      autoAlpha:0,
-      opacity: 0,  
-      scale: 0.9  
-    },
-      autoAlpha:1,
-      opacity: 1,  
-      scale: 1  
-}, 0);    
+let subtitle = SplitText.create(".sub-title", { type: "chars, words" });
+  
+gsap.set(subtitle.chars, {
+  opacity:0
+});
+gsap.to(subtitle.chars, {
+    duration: 2,
+    opacity: 1,
+    ease: "quart.out",
+    stagger: { from: "random", each: 0.02}
+  });
+gsap.set(".sub-title", {
+  opacity:1
+});
 	
 gsap.set('.indicator', {
  y:-100	
