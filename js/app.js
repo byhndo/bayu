@@ -304,7 +304,7 @@ gsap.to(subtitle.chars, {
     autoAlpha:1,
     opacity: 1,
     ease: "quart.out",
-    stagger: { from: "random", each: 0.03}
+    stagger: { from: "random", each: 0.02}
   }, ">");
 gsap.set(".sub-title", {
   autoAlpha:1,
@@ -338,7 +338,7 @@ gsap.to('.indicator', {
   }
  });
 }
-}, "<");
+}, ">");
     
 (function () {
   const arrOpts = [
