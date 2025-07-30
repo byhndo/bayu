@@ -6,7 +6,7 @@ const Bio = {
 <!-- sub1 -->
 <div class="sub1">
 <div class="box1">
-<svg class="sub">
+<svg class="hidden">
 <defs>
 <filter id='noiseone'>
 <feGaussianBlur in="SourceGraphic" stdDeviation="0" result="blur"></feGaussianBlur>
@@ -61,7 +61,7 @@ tidak tahu apa-apa.&rdquo;
 </div>
 </div>
 <div class="rbox">
-<svg class="noise3">
+<svg class="hidden">
 <defs>
 <filter id='noisetwo'>
 <feGaussianBlur in="SourceGraphic" stdDeviation="0" result="blur"></feGaussianBlur>
