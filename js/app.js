@@ -638,8 +638,8 @@ tl.to(line, {
 const RevealBoxs1 = container.querySelectorAll(".box1");
 RevealBoxs1.forEach((box1) => { 	
 const one = box1.querySelectorAll(".one"); 
-const feBlur = box1.querySelector(`#noise2 feGaussianBlur`);
-const feDisplacementMap = box1.querySelector(`#noise2 feDisplacementMap`);
+const feBlur = box1.querySelector(`#noiseone feGaussianBlur`);
+const feDisplacementMap = box1.querySelector(`#noiseone feDisplacementMap`);
           
 let primitiveValues = { stdDeviation: 0, scale: 0 };
  
@@ -708,8 +708,8 @@ tl.to(vl, {
 const rboxs = container.querySelectorAll(".rbox");
 rboxs.forEach((rbox) => { 	
 const one2 = rbox.querySelectorAll(".one2"); 
-const feBlur = rbox.querySelector(`#noise3 feGaussianBlur`);
-const feDisplacementMap = rbox.querySelector(`#noise3 feDisplacementMap`);
+const feBlur = rbox.querySelector(`#noisetwo feGaussianBlur`);
+const feDisplacementMap = rbox.querySelector(`#noisetwo feDisplacementMap`);
           
 let primitiveValues = { stdDeviation: 0, scale: 0 };
  
