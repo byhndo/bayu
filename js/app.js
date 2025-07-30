@@ -296,15 +296,18 @@ const titletl = gsap.timeline({
 let subtitle = SplitText.create(".sub-title", { type: "chars, words" });
   
 gsap.set(subtitle.chars, {
+  autoAlpha:0,
   opacity:0
 });
 gsap.to(subtitle.chars, {
     duration: 2,
+    autoAlpha:1,
     opacity: 1,
     ease: "quart.out",
     stagger: { from: "random", each: 0.02}
   });
 gsap.set(".sub-title", {
+  autoAlpha:1,
   opacity:1
 });
 	
