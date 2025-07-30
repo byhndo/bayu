@@ -8,7 +8,7 @@ const Photos = {
 <div class="box1">
 <svg class="sub">
 <defs>
-<filter id='noise2' x='0%' y='0%' width='100%' height='100%'>
+<filter id='noise2'>
 <feGaussianBlur in="SourceGraphic" stdDeviation="0" result="blur"></feGaussianBlur>
 <feColorMatrix in="blur" mode="matrix" values="	1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 18 -5" result="goo"></feColorMatrix>
 <feTurbulence type="fractalNoise" baseFrequency="0.07 0.3" numOctaves="1" seed="1" result="noise"></feTurbulence>
