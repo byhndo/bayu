@@ -8,7 +8,7 @@ const Bio = {
 <div class="box1">
 <svg class="sub">
 <defs>
-<filter id='noise2'>
+<filter id='noiseone'>
 <feGaussianBlur in="SourceGraphic" stdDeviation="0" result="blur"></feGaussianBlur>
 <feColorMatrix in="blur" mode="matrix" values="	1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 18 -5" result="goo"></feColorMatrix>
 <feTurbulence type="fractalNoise" baseFrequency="0.07 0.3" numOctaves="1" seed="1" result="noise"></feTurbulence>
@@ -63,7 +63,7 @@ tidak tahu apa-apa.&rdquo;
 <div class="rbox">
 <svg class="noise3">
 <defs>
-<filter id='noise3'>
+<filter id='noisetwo'>
 <feGaussianBlur in="SourceGraphic" stdDeviation="0" result="blur"></feGaussianBlur>
 <feColorMatrix in="blur" mode="matrix" values="	1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 18 -5" result="goo"></feColorMatrix>
 <feTurbulence type="fractalNoise" baseFrequency="0.07 0.3" numOctaves="1" seed="1" result="noise"></feTurbulence>
