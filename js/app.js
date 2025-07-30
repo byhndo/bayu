@@ -269,7 +269,7 @@ let primitiveValues = { stdDeviation: 0, scale: 0 };
 const titletl = gsap.timeline({
     defaults: {
       duration: 2.3,
-      ease: "quart.out"
+      ease: "expo.out"
     },
 
     onUpdate: () => {
@@ -279,7 +279,7 @@ const titletl = gsap.timeline({
   })
 	
 .to(primitiveValues, { 
-    startAt: { stdDeviation: 10, scale: 90 },  
+    startAt: { stdDeviation: 10, scale: 100 },  
     stdDeviation: 0,  
     scale: 0  
   }, 0)
@@ -304,7 +304,7 @@ let primitiveValuessub = { stdDeviation: 0, scale: 0 };
 const subtitletl = gsap.timeline({
     defaults: {
       duration: 2.3,
-      ease: "quart.out"
+      ease: "expo.out"
     },
 
     onUpdate: () => {
