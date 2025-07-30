@@ -222,7 +222,7 @@ html.lenis, html.lenis body {
  --border-button: 0;
 }
 
-svg.title, svg.subtitle, svg.sub, svg.noise2, svg.noise3 {
+svg.title, svg.subtitle, svg.noiseone, svg.noisetwo {
  width: 0;
  height: 0;
  position: absolute;
@@ -588,7 +588,7 @@ img {
  text-align:center;
  text-transform: uppercase;
  font-weight:400;
- filter: url(#noise2);
+ filter: url(#noiseone);
  letter-spacing:-1px;
  font-family: var(--font3);
 }
@@ -602,7 +602,7 @@ img {
  font-family: var(--font3);
  font-weight:400;
  letter-spacing:-1px;
- filter: url(#noise3);
+ filter: url(#noisetwo);
 }
 
 .two{
