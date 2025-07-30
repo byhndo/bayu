@@ -309,7 +309,7 @@ gsap.to(subtitle.chars, {
 gsap.set(".sub-title", {
   autoAlpha:1,
   opacity:1
-});
+}, ">");
 	
 gsap.set('.indicator', {
  y:-100	
