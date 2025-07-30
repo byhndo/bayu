@@ -24,12 +24,12 @@
  --fwfooter: 300;
 }
 
-.hidden {
- position: absolute;
- overflow: hidden;
+.hidden{
  width: 0;
  height: 0;
+ position: absolute;
  pointer-events: none;
+ overflow: hidden;
 }
 
 html{
@@ -220,13 +220,6 @@ html.lenis, html.lenis body {
  --button-margin: 0;
  --radius-button: 40px;
  --border-button: 0;
-}
-
-svg.title, svg.subtitle, svg.sub {
- width: 0;
- height: 0;
- position: absolute;
- pointer-events: none;
 }
 	
 *, *:before, *:after {
