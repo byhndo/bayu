@@ -479,13 +479,8 @@ p.sub2 {
  text-transform: uppercase;
 }
 
-.box3{
- margin-bottom: 3rem;
-}
-
 .quote {
  display: inline-block;
- max-width:77%;
  font-family:var(--font2);
  text-align:center;
  font-size:125%;
