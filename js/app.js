@@ -304,7 +304,7 @@ gsap.to(subtitle.chars, {
     autoAlpha:1,
     opacity: 1,
     ease: "quart.out",
-    stagger: { from: "random", each: 0.02}
+    stagger: { from: "random", each: 0.03}
   }, "<");
 gsap.set(".sub-title", {
   autoAlpha:1,
@@ -459,7 +459,7 @@ gsap.to('.indicator', {
   }
  });
 }
-}, "+=1");
+}, "+=2");
                     
 gsap.to('.header', {  
  onComplete: () => {
