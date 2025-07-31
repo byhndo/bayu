@@ -305,7 +305,7 @@ gsap.to(subtitle.chars, {
     opacity: 1,
     ease: "quart.out",
     stagger: { from: "random", each: 0.02}
-  }, ">");
+  }, "<");
 gsap.set(".sub-title", {
   autoAlpha:1,
   opacity:1
