@@ -724,7 +724,6 @@ tl.to(primitiveValues, {
       scale: 0.8,
       yPercent: 20
     },
-    delay: .7,
     opacity: 1, 
     autoAlpha:1,
     scale: 1,
