@@ -638,9 +638,9 @@ const tl = gsap.timeline({
     },  
     
   scrollTrigger: {
-      trigger: box1, 
+     trigger: box1, 
      toggleActions: once
-    }
+    }, delay: .7
   });
 
 tl.to(primitiveValues, { 
@@ -657,7 +657,6 @@ tl.to(primitiveValues, {
       scale: 0.8,
       yPercent: 20
     },
-    delay: .7,
     opacity: 1, 
     autoAlpha:1,
     scale: 1,
@@ -712,7 +711,7 @@ const tl = gsap.timeline({
   scrollTrigger: {
      trigger: rbox, 
      toggleActions: once
-    }
+    }, delay: .7
   });
 
 tl.to(primitiveValues, { 
