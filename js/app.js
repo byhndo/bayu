@@ -459,7 +459,7 @@ gsap.to('.indicator', {
   }
  });
 }
-}, ">");
+}, "+=1");
                     
 gsap.to('.header', {  
  onComplete: () => {
