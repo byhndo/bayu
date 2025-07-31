@@ -497,6 +497,7 @@ p.sub2 {
 }
 
 .cite .quote{
+ display: inline-block;
  font-family: var(--font2);
  font-weight:400;
  font-size: 65%;
