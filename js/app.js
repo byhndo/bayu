@@ -139,7 +139,7 @@ function contentShow() {
 const easing = "expoScale(0.5,7,none)";
 const dur = 1;
 const once = "play none none reset";
-const delaytl = .5;
+const delaytl = .6;
 
 $('html, body').css({
   'overflow': 'auto',
