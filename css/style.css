@@ -485,7 +485,6 @@ p.sub2 {
 
 .quote {
  display: inline-block;
- margin:60px auto -60px auto;
  max-width:77%;
  font-family:var(--font2);
  text-align:center;
