@@ -510,6 +510,7 @@ p.sub2 {
  font-style: italic;
  color: inherit;
  margin-bottom: 7rem;
+ width: 100%;
 }
 
 .b-text{
