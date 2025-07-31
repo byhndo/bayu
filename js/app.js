@@ -551,7 +551,7 @@ const RevealBoxsme = container.querySelectorAll(".boxme");
     scrollTrigger: {
      trigger: boxme,
      toggleActions: once
-     }
+     }, delay:delaytl
      }); 
 
 tl.set(aboutme, {
@@ -564,8 +564,7 @@ tl.to(aboutme, {
  y:0,
  duration:dur,
  stagger:.07,
- ease: easing,
- delay:delaytl
+ ease: easing
 }, a * .2);
 
 });	  
@@ -577,7 +576,7 @@ const RevealBoxs = container.querySelectorAll(".box");
     scrollTrigger: {
      trigger: box,
      toggleActions: once
-     }
+     }, delay:delaytl
      }); 
 
 tl.set(gr, {
@@ -588,8 +587,7 @@ tl.to(gr, {
  duration:dur,	
  width:"100%",
  stagger:.07,
- ease:easing,
- delay:delaytl
+ ease:easing
 }, g * .2);	
 
 });	  
@@ -601,7 +599,7 @@ const RevealBoxsline = container.querySelectorAll(".boxline");
     scrollTrigger: {
      trigger: boxline,
      toggleActions: once
-     }
+     }, delay:delaytl
      }); 
 
 tl.set(line, {
@@ -612,8 +610,7 @@ tl.to(line, {
  duration: dur,	
  width: "100%",
  stagger: .07,
- ease: easing,
- delay:delaytl
+ ease: easing
 }, l * .2);	
 
 });	  
@@ -640,7 +637,7 @@ const tl = gsap.timeline({
   scrollTrigger: {
      trigger: box1, 
      toggleActions: once
-    }, delay: .7
+    }, delay:delaytl
   });
 
 tl.to(primitiveValues, { 
@@ -675,7 +672,7 @@ revealvline.forEach((vline) => {
       scrub: 2,
       start: "top bottom",
       end : "bottom 50%"
-    }
+    }, delay:delaytl
   });
 
 tl.set(vl, {
@@ -683,8 +680,7 @@ tl.set(vl, {
 });
 	
 tl.to(vl, {
- height:"200px",
- delay:delaytl
+ height:"200px"
 })
   
 });
@@ -711,7 +707,7 @@ const tl = gsap.timeline({
   scrollTrigger: {
      trigger: rbox, 
      toggleActions: once
-    }, delay: .7
+    }, delay:delaytl
   });
 
 tl.to(primitiveValues, { 
@@ -744,7 +740,7 @@ const RevealBoxs2 = container.querySelectorAll(".box2");
   scrollTrigger: {
    trigger: box2,
    toggleActions: once
-   }
+   }, delay:delaytl
    });
 	 
 tl.set(two, {
@@ -757,8 +753,7 @@ tl.to(two, {
  y:0,
  duration: dur,
  stagger:.07,
- ease: easing,
- delay:delaytl
+ ease: easing
 }, i * .2);
 	   
 });      
@@ -782,7 +777,7 @@ const RevealBoxs3 = container.querySelectorAll(".box3");
   scrub:2,
   start: "top bottom",
   end : "bottom 50%"
- } 
+ }, delay:delaytl
  })
  
 .set(split.chars, { autoAlpha: 0 })
@@ -792,8 +787,7 @@ const RevealBoxs3 = container.querySelectorAll(".box3");
  ease: "expo.in",
  autoAlpha:1,
  opacity: 1,
-  stagger: { from: "random", each: 0.01 },
-  delay: 0.5
+  stagger: { from: "random", each: 0.01 }
 }) 
 });  
 });
@@ -804,15 +798,14 @@ const revealContainers = container.querySelectorAll(".item");
  scrollTrigger: {
   trigger: el,
   toggleActions: once
-  }
+  }, delay:delaytl
  });
 	 
 tl.to(el, {
  autoAlpha: 1,
  "--x": "-98.75%",
  ease: "steps(39)",
- duration: 2,
- delay:delaytl
+ duration: 2
 }, i * .02);
 
 });
@@ -824,14 +817,13 @@ const items = container.querySelectorAll(".sc");
       scrollTrigger: {
         trigger: soc,
         toggleActions: once
-      }
+      }, delay:delaytl
     });
 	  	  
 tl.to(item, {
  autoAlpha:1,
  duration: dur,
- ease: easing,
- delay:delaytl
+ ease: easing
 });	  
           
 })
@@ -843,14 +835,13 @@ const RevealBoxs4 = container.querySelectorAll(".box4");
  scrollTrigger: {
   trigger: box4,
   toggleActions: once
- }
+ }, delay:delaytl
  });  
 	 
 tl.to(footer, {
  autoAlpha:1,
  duration:dur,
- ease: easing,
- delay:delaytl
+ ease: easing
 }); 
 		 	                                                                                                                  
 });	
