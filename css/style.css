@@ -482,6 +482,7 @@ p.sub2 {
 .box3{
  display: flex;
  justify-content: center;
+ text-align: center;
 }
 
 .quote {
