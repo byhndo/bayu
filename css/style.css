@@ -480,7 +480,8 @@ p.sub2 {
 }
 
 .box3{
- text-align: center;
+ display: flex;
+ justify-content: center;
 }
 
 .quote {
