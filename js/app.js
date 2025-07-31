@@ -134,7 +134,7 @@ async function animateLoader() {
 
 animateLoader();
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, SplitText);
 function contentShow() {
 const easing = "expoScale(0.5,7,none)";
 const dur = 1;
@@ -758,9 +758,18 @@ tl.to(two, {
 	   
 });      
       	 
+document.fonts.ready.then(() => {
 const RevealBoxs3 = container.querySelectorAll(".box3");
  RevealBoxs3.forEach((box3) => {
- const quote = box3.querySelectorAll(".quote");                              
+ const quote = box3.querySelector(".quote");
+      
+ if (quote.splitText) {
+    quote.splitText.revert();
+ }
+   
+ const split = SplitText.create(quote, { type: "chars, words" });    
+ quote.splitText = split; 
+   
  let tl = gsap.timeline({
  scrollTrigger: {
   trigger: box3,
@@ -768,20 +777,20 @@ const RevealBoxs3 = container.querySelectorAll(".box3");
   scrub:2,
   start: "top bottom",
   end : "bottom 50%"
- }, delay: delaytl
- });  
-	 
-tl.set(quote, {
- scaleY: 0
-});
-	 
-tl.to(quote, {
+ } 
+ })
+ 
+.set(split.chars, { autoAlpha: 0 })
+.set(quote, { autoAlpha: 1 })
+   
+.to(split.chars, {
  ease: "expo.in",
  autoAlpha:1,
  opacity: 1,
- scaleY: 1
-});
-	 	                                                                                                                  
+  stagger: { from: "random", each: 0.01 },
+  delay: 0.5
+}) 
+});  
 });
 	 
 const revealContainers = container.querySelectorAll(".item"); 
