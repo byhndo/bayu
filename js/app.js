@@ -310,36 +310,7 @@ gsap.set(".sub-title", {
   autoAlpha:1,
   opacity:1
 });
-	
-gsap.set('.indicator', {
- y:-100	
-});
-	
-gsap.to('.indicator', {
- y:0,
- duration:dur,
- autoAlpha: 1,
- ease: easing,
- onComplete: () => {
- gsap.fromTo('.indicator', {
-  autoAlpha: 1,
-  y:0,
-  ease: easing
- }, {
-  autoAlpha: 0,
-  y:-100,
-  duration: dur,
-  ease: easing,
-  scrollTrigger: {
-  scrub: 3,
-  trigger: '.indicator',
-  start: 'center 40%',
-  end: 'center 70%'					
-  }
- });
-}
-}, ">");
-    
+	    
 (function () {
   const arrOpts = [
     {
@@ -460,6 +431,35 @@ bttn.addEventListener("click", () => {
     });
   });
 })();
+
+gsap.set('.indicator', {
+ y:-100	
+});
+	
+gsap.to('.indicator', {
+ y:0,
+ duration:dur,
+ autoAlpha: 1,
+ ease: easing,
+ onComplete: () => {
+ gsap.fromTo('.indicator', {
+  autoAlpha: 1,
+  y:0,
+  ease: easing
+ }, {
+  autoAlpha: 0,
+  y:-100,
+  duration: dur,
+  ease: easing,
+  scrollTrigger: {
+  scrub: 3,
+  trigger: '.indicator',
+  start: 'center 40%',
+  end: 'center 70%'					
+  }
+ });
+}
+}, ">");
                     
 gsap.to('.header', {  
  onComplete: () => {
