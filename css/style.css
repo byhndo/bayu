@@ -493,6 +493,7 @@ p.sub2 {
  color:inherit;	
  visibility:hidden;
  opacity:0;
+ width: 77%;
 }
 
 .quote .char{
@@ -508,7 +509,7 @@ p.sub2 {
  font-size: 65%;
  font-style: italic;
  color: inherit;
- margin-bottom: var(--marginp);
+ margin-bottom: 7rem;
 }
 
 .b-text{
