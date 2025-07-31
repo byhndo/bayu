@@ -139,7 +139,7 @@ function contentShow() {
 const easing = "expoScale(0.5,7,none)";
 const dur = 1;
 const once = "play none none reset";
-const delaytl = .6;
+const delaytl = .5;
 
 $('html, body').css({
   'overflow': 'auto',
@@ -651,13 +651,13 @@ tl.to(primitiveValues, {
 
 .to(one, { 
     duration: 1.3,
-    delay:delaytl,
     startAt: {
       opacity: 0, 
       autoAlpha:0,
       scale: 0.8,
       yPercent: 20
     },
+    delay: .7,
     opacity: 1, 
     autoAlpha:1,
     scale: 1,
@@ -723,13 +723,13 @@ tl.to(primitiveValues, {
 
 .to(one2, { 
     duration: 1.3,
-    delay:delaytl,
     startAt: {
       opacity: 0, 
       autoAlpha:0,
       scale: 0.8,
       yPercent: 20
     },
+    delay: .7,
     opacity: 1, 
     autoAlpha:1,
     scale: 1,
