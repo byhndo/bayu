@@ -278,7 +278,7 @@ h5 {
  font-family: var(--font2);
 }
 
-.photos .theme{
+/*.photos .theme{
  --color-button-bg: var(--light);
  --color-button-text: var(--darkgrey);
 }
@@ -290,7 +290,7 @@ h5 {
  font-weight: var(--fwnav);
  text-align: center;
  transition: background 1s 1s, color 1s 1s;
-}
+}*/
 
 .header{
  height:86.5dvh;
