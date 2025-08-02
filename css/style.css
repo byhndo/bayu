@@ -271,6 +271,7 @@ h5 {
  font-size: var(--sizenav);
  font-weight: var(--fwnav);
  text-align: center;
+ transition: all 2s;
 }
 
 .theme {
@@ -284,7 +285,7 @@ h5 {
  font-size: var(--sizenav);
  font-weight: var(--fwnav);
  font-family: var(--font2);
- transition: background 4s 4s, color 4s 4s;
+ transition: all 2s;
 }
 
 .photos .theme{
