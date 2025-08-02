@@ -284,13 +284,13 @@ h5 {
  font-size: var(--sizenav);
  font-weight: var(--fwnav);
  font-family: var(--font2);
+ transition: background 0s 1.7s, color .6s;
 }
 
 .photos .theme{
  --color-button-bg: var(--light);
  --color-button-text: var(--darkgrey);
- transition: all 4s; 
-}
+ }
 
 .header{
  height:86.5dvh;
