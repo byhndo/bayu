@@ -278,10 +278,6 @@ h5 {
  font-family: var(--font2);
 }
 
-.particles-button{
- transition: background 1s 1s, color 1s 1s;
-}
-
 .header{
  height:86.5dvh;
  display:flex;
