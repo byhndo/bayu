@@ -284,7 +284,7 @@ h5 {
  font-size: var(--sizenav);
  font-weight: var(--fwnav);
  font-family: var(--font2);
- transition: background 2s 4s, color 4s;
+ transition: background 4s 4s, color 4s 4s;
 }
 
 .photos .theme{
