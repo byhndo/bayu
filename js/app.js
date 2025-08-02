@@ -176,17 +176,17 @@ const updateButtonColors = (path) => {
   if (!btnNav1.value || !btnNav2.value) return;
 
   if (path === '/bio') {
-    btnNav1.value.style.backgroundColor = '#17191c'; 
+    btnNav1.value.style.backgroundColor = '#3C4048'; 
     btnNav1.value.style.color = '#e6e7eb';           
 
-    btnNav2.value.style.backgroundColor = '#17191c';
+    btnNav2.value.style.backgroundColor = '#3C4048';
     btnNav2.value.style.color = '#e6e7eb';
   } else if (path === '/photos') {
     btnNav1.value.style.backgroundColor = '#e6e7eb'; 
-    btnNav1.value.style.color = '#17191c';           
+    btnNav1.value.style.color = '#3C4048';           
 
     btnNav2.value.style.backgroundColor = '#e6e7eb';
-    btnNav2.value.style.color = '#17191c';
+    btnNav2.value.style.color = '#3C4048';
   }
 };
 	  
