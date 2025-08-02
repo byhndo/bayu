@@ -276,22 +276,11 @@ h5 {
  font-size: var(--sizenav);
  font-weight: var(--fwnav);
  font-family: var(--font2);
- transition: background 1s 1s, color 1s 1s;
 }
 
-/*.photos .theme{
- --color-button-bg: var(--light);
- --color-button-text: var(--darkgrey);
-}
-
-#btn-nav-1, #btn-nav-2{
- text-transform: none;
- font-family: var(--font2);
- font-size: var(--sizenav);
- font-weight: var(--fwnav);
- text-align: center;
+.particles-button{
  transition: background 1s 1s, color 1s 1s;
-}*/
+}
 
 .header{
  height:86.5dvh;
