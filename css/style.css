@@ -263,6 +263,7 @@ h5 {
  padding: 0 .5rem 0;
  visibility:hidden;
  opacity:0; 
+ transition: background 1s 1s, color 1s 1s;
 } 
 
 #btn-nav-1, #btn-nav-2{
@@ -284,7 +285,6 @@ h5 {
  font-size: var(--sizenav);
  font-weight: var(--fwnav);
  font-family: var(--font2);
- transition: background 1s 1s, color 1s 1s;
 }
 
 .photos .theme{
