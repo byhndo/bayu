@@ -315,7 +315,7 @@ h1 {
  text-transform:none;
  left:-3%;
  filter: url(#noisetitle);
- transition: color 1s .7s;
+ transition: color 1.7s .7s;
 }
 
 .photos h1{
