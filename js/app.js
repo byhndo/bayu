@@ -188,8 +188,8 @@ const updateButtonColors = (path) => {
   gsap.to([btnNav1.value, btnNav2.value], {
     backgroundColor: bgColor,
     color: textColor,
-    duration: 1,
-    delay: 1
+    duration: .9,
+    delay: .9
   });
 };
 	  
