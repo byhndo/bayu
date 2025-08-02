@@ -263,6 +263,7 @@ h5 {
  padding: 0 .5rem 0;
  visibility:hidden;
  opacity:0; 
+ transition: background 2s, color 2s;
 } 
 
 #btn-nav-1, #btn-nav-2{
@@ -271,7 +272,6 @@ h5 {
  font-size: var(--sizenav);
  font-weight: var(--fwnav);
  text-align: center;
- transition: background 2s, color 2s;
 }
 
 .theme {
