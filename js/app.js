@@ -189,7 +189,7 @@ const updateButtonColors = (path) => {
     backgroundColor: bgColor,
     color: textColor,
     duration: .9,
-    delay: .9
+    delay: 1
   });
 };
 	  
