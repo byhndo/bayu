@@ -169,6 +169,27 @@ const app = createApp({
     const bg = ref('bio');
     const firstLoad = ref(true);
 
+    const btnNav1 = ref(null);
+    const btnNav2 = ref(null);
+
+const updateButtonColors = (path) => {
+  if (!btnNav1.value || !btnNav2.value) return;
+
+  if (path === '/bio') {
+    btnNav1.value.style.backgroundColor = '#17191c'; 
+    btnNav1.value.style.color = '#e6e7eb';           
+
+    btnNav2.value.style.backgroundColor = '#17191c';
+    btnNav2.value.style.color = '#e6e7eb';
+  } else if (path === '/photos') {
+    btnNav1.value.style.backgroundColor = '#e6e7eb'; 
+    btnNav1.value.style.color = '#17191c';           
+
+    btnNav2.value.style.backgroundColor = '#e6e7eb';
+    btnNav2.value.style.color = '#17191c';
+  }
+};
+	  
     const beforeEnter = async (el, done) => {
       await preloadImages(el);       
       await nextTick();                    
@@ -220,6 +241,7 @@ const app = createApp({
         bg.value = 'bio';
       }
       nextTick(() => {
+	updateButtonColors(route.path); 
         triggerAnimation();
         firstLoad.value = false;
       });
@@ -237,6 +259,7 @@ const app = createApp({
         }
 
 	nextTick(() => {
+	updateButtonColors(newPath);
         requestAnimationFrame(() => {
           window.scrollTo({ top: 0, behavior: 'smooth' });
         });
@@ -253,6 +276,8 @@ const app = createApp({
       beforeEnter,
       afterEnter,
       afterLeave,
+      btnNav1,
+      btnNav2
     };
   },
 });
