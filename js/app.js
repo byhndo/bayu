@@ -188,6 +188,13 @@ const updateButtonColors = (path) => {
     btnNav2.value.style.backgroundColor = '#e6e7eb';
     btnNav2.value.style.color = '#3C4048';
   }
+
+  gsap.to([btnNav1.value, btnNav2.value], {
+    backgroundColor: bgColor,
+    color: textColor,
+    duration: 1,
+    delay:1,
+  });
 };
 	  
     const beforeEnter = async (el, done) => {
