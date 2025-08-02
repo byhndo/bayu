@@ -263,7 +263,7 @@ h5 {
  padding: 0 .5rem 0;
  visibility:hidden;
  opacity:0; 
- transition: background 4s 2s, color 4s 2s;
+ transition: background 4s, color 4s;
 } 
 
 #btn-nav-1, #btn-nav-2{
