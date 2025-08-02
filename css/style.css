@@ -276,6 +276,7 @@ h5 {
  font-size: var(--sizenav);
  font-weight: var(--fwnav);
  font-family: var(--font2);
+ transition: background 1s 1s, color 1s 1s;
 }
 
 /*.photos .theme{
