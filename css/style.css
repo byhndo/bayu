@@ -288,7 +288,8 @@ h5 {
 
 .photos .theme{
  --color-button-bg: var(--light);
- --color-button-text: var(--darkgrey);     
+ --color-button-text: var(--darkgrey);
+ transition: background 4s color 4s; 
 }
 
 .header{
