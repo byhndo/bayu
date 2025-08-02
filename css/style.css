@@ -271,7 +271,7 @@ h5 {
  font-size: var(--sizenav);
  font-weight: var(--fwnav);
  text-align: center;
- transition: background 2s 1s, color 2s 1s;
+ transition: background 1s 1s, color 1s 1s;
 }
 
 .theme {
