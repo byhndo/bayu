@@ -2,7 +2,7 @@
 
 :root {  
  --light: #e6e7eb;
- --dark: #23252a;
+ --dark: #17191c;
  --grey: #BBBFCA;
  --darkgrey: #495057; 
  --soc1: #393E46;
@@ -550,7 +550,7 @@ p.sub2 {
  top: 0;
  transform: translateX(var(--x));
  width: 4000%;
- filter: brightness(0) saturate(100%) invert(11%) sepia(12%) saturate(639%) hue-rotate(185deg) brightness(94%) contrast(89%);
+ filter: brightness(0) saturate(100%) invert(8%) sepia(3%) saturate(1923%) hue-rotate(177deg) brightness(98%) contrast(96%);
 }
 
 img {
