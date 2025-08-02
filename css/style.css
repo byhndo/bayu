@@ -286,6 +286,11 @@ h5 {
  font-family: var(--font2);
 }
 
+.photos .theme{
+ --color-button-bg: var(--light);
+ --color-button-text: var(--darkgrey);     
+}
+
 .header{
  height:86.5dvh;
  display:flex;
