@@ -263,16 +263,7 @@ h5 {
  padding: 0 .5rem 0;
  visibility:hidden;
  opacity:0; 
- transition: background 1s 1s, color 1s 1s;
 } 
-
-#btn-nav-1, #btn-nav-2{
- text-transform: none;
- font-family: var(--font2);
- font-size: var(--sizenav);
- font-weight: var(--fwnav);
- text-align: center;
-}
 
 .theme {
  --color-item-bg: transparent;
@@ -290,7 +281,16 @@ h5 {
 .photos .theme{
  --color-button-bg: var(--light);
  --color-button-text: var(--darkgrey);
- }
+}
+
+#btn-nav-1, #btn-nav-2{
+ text-transform: none;
+ font-family: var(--font2);
+ font-size: var(--sizenav);
+ font-weight: var(--fwnav);
+ text-align: center;
+ transition: background 1s 1s, color 1s 1s;
+}
 
 .header{
  height:86.5dvh;
