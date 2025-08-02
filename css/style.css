@@ -308,7 +308,6 @@ h1 {
  color: var(--dark);
  font-size: var(--sizetitle);
  padding: 0;
- transition: color 2s .7s; 
  line-height:1.05;
  font-weight:var(--fwtitle);
  text-align:center;
