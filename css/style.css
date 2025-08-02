@@ -271,7 +271,6 @@ h5 {
  font-size: var(--sizenav);
  font-weight: var(--fwnav);
  text-align: center;
- transition: background 1s 1s, color 1s 1s;
 }
 
 .theme {
@@ -285,6 +284,7 @@ h5 {
  font-size: var(--sizenav);
  font-weight: var(--fwnav);
  font-family: var(--font2);
+ transition: background 1s 1s, color 1s 1s;
 }
 
 .photos .theme{
@@ -315,7 +315,7 @@ h1 {
  text-transform:none;
  left:-3%;
  filter: url(#noisetitle);
- transition: color 1.7s .7s;
+ transition: color 1.5s .7s;
 }
 
 .photos h1{
