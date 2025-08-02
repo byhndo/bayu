@@ -550,7 +550,7 @@ p.sub2 {
  top: 0;
  transform: translateX(var(--x));
  width: 4000%;
- filter: brightness(0) saturate(100%) invert(5%) sepia(2%) saturate(4755%) hue-rotate(191deg) brightness(99%) contrast(91%);
+ filter: brightness(0) saturate(100%) invert(3%) sepia(4%) saturate(5243%) hue-rotate(190deg) brightness(90%) contrast(86%);
 }
 
 img {
