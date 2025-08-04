@@ -13,9 +13,10 @@ gulp.task('js', () => {
     'js/app.js'
   ])
   .pipe(obfuscator({ compact: true }))
-  .pipe(rename({ suffix: '.min' }))
+  .pipe(rename({ suffix: '.min', extname: '.js' })) 
   .pipe(gulp.dest('dist/js'));
 });
+
 
 gulp.task('html', () => {
   return gulp.src('index.html')
@@ -35,5 +36,4 @@ gulp.task('css', () => {
     .pipe(gulp.dest('dist/css'));
 });
 
-// Default task
 gulp.task('default', gulp.parallel('js', 'html', 'css'));
