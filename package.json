@@ -1,6 +1,9 @@
 {
-  "name": "cdn-obfuscate",
+  "name": "vue-cdn-obfuscate",
   "version": "1.0.0",
+  "scripts": {
+    "build": "gulp"
+  },
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-htmlmin": "^5.0.1",
