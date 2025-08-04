@@ -3,6 +3,7 @@ const obfuscator = require('gulp-javascript-obfuscator');
 const htmlmin = require('gulp-htmlmin');
 const rename = require('gulp-rename');
 const cleanCSS = require('gulp-clean-css');
+const replace = require('gulp-replace'); 
 
 gulp.task('js', () => {
   return gulp.src([
@@ -18,6 +19,11 @@ gulp.task('js', () => {
 
 gulp.task('html', () => {
   return gulp.src('index.html')
+    
+    .pipe(replace('js/bio.js', 'js/bio.min.js'))
+    .pipe(replace('js/photos.js', 'js/photos.min.js'))
+    .pipe(replace('js/router.js', 'js/router.min.js'))
+    .pipe(replace('js/app.js', 'js/app.min.js'))
     .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest('dist'));
 });
@@ -29,4 +35,5 @@ gulp.task('css', () => {
     .pipe(gulp.dest('dist/css'));
 });
 
+// Default task
 gulp.task('default', gulp.parallel('js', 'html', 'css'));
