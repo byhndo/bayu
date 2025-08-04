@@ -1,16 +1,17 @@
-name: Build & Deploy to GitHub Pages
+
+name: Build and Deploy
 
 on:
   push:
     branches:
-      - main   # atau ganti sesuai branch kamu
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout
         uses: actions/checkout@v3
 
       - name: Setup Node.js
@@ -21,7 +22,7 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run Gulp build
+      - name: Run Gulp
         run: npx gulp
 
       - name: Deploy to GitHub Pages
