@@ -19,7 +19,7 @@ gulp.task('js', () => {
 
 gulp.task('html', () => {
   return gulp.src('index.html')
-    
+    .pipe(replace('<base href="/" />', '<base href="/bayu/" />'))
     .pipe(replace('js/bio.js', 'js/bio.min.js'))
     .pipe(replace('js/photos.js', 'js/photos.min.js'))
     .pipe(replace('js/router.js', 'js/router.min.js'))
