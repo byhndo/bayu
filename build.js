@@ -1,22 +1,36 @@
+// build.js
 import fs from 'fs';
 import path from 'path';
-import JavaScriptObfuscator from 'javascript-obfuscator';
+import obfuscator from 'javascript-obfuscator';
 
-// Folder tempat file asli berada
 const inputDir = './js';
-const outputDir = './js'; // Overwrite langsung
+const outputDir = './dist/js';
+const htmlSource = './index.html';
+const htmlDest = './dist/index.html';
 
-const files = ['app.js', 'bio.js', 'photos.js'];
+// 1. Buat folder output jika belum ada
+fs.mkdirSync(outputDir, { recursive: true });
 
-files.forEach(file => {
-  const inputPath = path.join(inputDir, file);
-  const code = fs.readFileSync(inputPath, 'utf8');
+// 2. Obfuscate semua file JS di ./js → ./dist/js
+fs.readdirSync(inputDir).forEach(file => {
+  const filePath = path.join(inputDir, file);
+  if (file.endsWith('.js')) {
+    const code = fs.readFileSync(filePath, 'utf-8');
+    const obfuscated = obfuscator.obfuscate(code, {
+      compact: true,
+      controlFlowFlattening: true
+    }).getObfuscatedCode();
 
-  const obfuscatedCode = JavaScriptObfuscator.obfuscate(code, {
-    compact: true,
-    controlFlowFlattening: true
-  }).getObfuscatedCode();
-
-  fs.writeFileSync(path.join(outputDir, file), obfuscatedCode);
-  console.log(`Obfuscated: ${file}`);
+    fs.writeFileSync(path.join(outputDir, file), obfuscated);
+    console.log(`✔️ Obfuscated: ${file}`);
+  }
 });
+
+// 3. Salin index.html ke ./dist
+if (fs.existsSync(htmlSource)) {
+  fs.mkdirSync('./dist', { recursive: true });
+  fs.copyFileSync(htmlSource, htmlDest);
+  console.log('✔️ Copied index.html');
+} else {
+  console.warn('⚠️ index.html not found!');
+}
