@@ -33,11 +33,11 @@ jobs:
       - name: Run build
         run: npm run build
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          # pastikan folder ini hasil dari build kamu
-          path: dist
+     - name: Upload artifact
+       uses: actions/upload-pages-artifact@v2
+       with:
+         path: dist
+
 
   deploy:
     needs: build
