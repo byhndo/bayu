@@ -1,20 +1,35 @@
 import fs from 'fs'
+import path from 'path'
 import obfuscator from 'javascript-obfuscator'
 
-// Buat folder dist
+// Pastikan dist folder dibuat
 fs.mkdirSync('dist', { recursive: true })
 
-// Copy index.html dan style.css
-fs.copyFileSync('src/index.html', 'dist/index.html')
-fs.copyFileSync('src/style.css', 'dist/style.css')
+// Copy HTML dan CSS biasa
+const copyIfExists = (filename) => {
+  const srcPath = `src/${filename}`
+  const distPath = `dist/${filename}`
+  if (fs.existsSync(srcPath)) {
+    fs.copyFileSync(srcPath, distPath)
+    console.log(`✅ Copied ${filename}`)
+  }
+}
 
-// Obfuscate script.js
-const js = fs.readFileSync('src/script.js', 'utf8')
-const obfuscated = obfuscator.obfuscate(js, {
-  compact: true,
-  controlFlowFlattening: true,
-}).getObfuscatedCode()
+copyIfExists('index.html')
+copyIfExists('style.css')
 
-fs.writeFileSync('dist/script.js', obfuscated)
+// Obfuscate semua .js file di src/
+const files = fs.readdirSync('src').filter(f => f.endsWith('.js'))
 
-console.log('✅ Build selesai dengan obfuscation')
+files.forEach(file => {
+  const input = fs.readFileSync(`src/${file}`, 'utf8')
+  const obfuscated = obfuscator.obfuscate(input, {
+    compact: true,
+    controlFlowFlattening: true,
+  }).getObfuscatedCode()
+
+  fs.writeFileSync(`dist/${file}`, obfuscated)
+  console.log(`🔒 Obfuscated ${file}`)
+})
+
+console.log('✅ Semua file JS telah di-obfuscate dan siap deploy.')
