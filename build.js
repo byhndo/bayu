@@ -1,17 +1,22 @@
 import fs from 'fs';
+import path from 'path';
 import JavaScriptObfuscator from 'javascript-obfuscator';
 
-// List file yang mau diobfuscate
-const files = ['src/app.js', 'src/bio.js', 'src/photos.js'];
+// Folder tempat file asli berada
+const inputDir = './js';
+const outputDir = './js'; // Overwrite langsung
+
+const files = ['app.js', 'bio.js', 'photos.js'];
 
 files.forEach(file => {
-  const content = fs.readFileSync(file, 'utf8');
-  const obfuscationResult = JavaScriptObfuscator.obfuscate(content, {
+  const inputPath = path.join(inputDir, file);
+  const code = fs.readFileSync(inputPath, 'utf8');
+
+  const obfuscatedCode = JavaScriptObfuscator.obfuscate(code, {
     compact: true,
     controlFlowFlattening: true
-  });
+  }).getObfuscatedCode();
 
-  // Tulis ke dist/ atau docs/
-  const outPath = file.replace('src', 'docs'); // atau 'dist'
-  fs.writeFileSync(outPath, obfuscationResult.getObfuscatedCode(), 'utf8');
+  fs.writeFileSync(path.join(outputDir, file), obfuscatedCode);
+  console.log(`Obfuscated: ${file}`);
 });
