@@ -1,0 +1,11 @@
+{
+  "name": "bayu-ghpages-obfuscate",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "type": "module",
+  "devDependencies": {
+    "javascript-obfuscator": "^4.0.0"
+  }
+}
