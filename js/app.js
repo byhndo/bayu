@@ -202,7 +202,6 @@ const updateButtonColors = (path) => {
 
 const afterEnter = async (el, done) => {
   await nextTick();
-  await preloadImages(el);
   requestAnimationFrame(() => {
     ScrollTrigger.refresh();
     setupReveal(el);
