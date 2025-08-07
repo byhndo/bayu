@@ -200,12 +200,15 @@ const updateButtonColors = (path) => {
       done();
     };
 
-    const afterEnter = async (el, done) => {                              
-      await nextTick();
-      setupReveal(el);
-      ScrollTrigger.refresh();
-      done();                       
-    };
+const afterEnter = async (el, done) => {
+  await nextTick();
+  await preloadImages(el);
+  requestAnimationFrame(() => {
+    ScrollTrigger.refresh();
+    setupReveal(el);
+    done();
+  });
+};
 	  
     const afterLeave = (el) => {
       if (el.ctx) {
